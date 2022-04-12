@@ -1,5 +1,3 @@
-// From homework -- UPDATE
-
 const jwt = require('jsonwebtoken');
 
 const secret = 'mysecretssshhhhhhh';
