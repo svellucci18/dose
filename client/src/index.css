@@ -17,3 +17,51 @@ body {
   font-family: var(--primaryFont);
 }
 
+#doseNav {
+  background-color: var(--primaryColor);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  
+
+}
+
+.whiteText {
+  color: var(--primaryColor);
+}
+
+.navTitle {
+  font-size: 4rem;
+  transition: all 0.3s ease-in-out 0s; 
+}
+
+.navTitle:hover
+{
+    cursor: url(assets/images/mushroom.png);
+    transform: scale(1, -1);
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+#home:hover {
+  color: var(--graphColorOne);
+}
+
+#learn:hover {
+  color: var(--graphColorThree);
+}
+
+#about:hover {
+  color: var(--graphColorFive);
+}
+
+#dose:hover {
+  color: var(--graphColorSix);
+}
+
+
+#offcanvasNavbar {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+}
