@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <Navbar id="doseNav" className="py-2" expand={false} >
   <Container fluid>
-    <Navbar.Brand className= "mx-auto navTitle" href="/">dose.</Navbar.Brand>
+    <Navbar.Brand className= "text-center mx-auto navTitle ps-5" href="/">dose.</Navbar.Brand>
     <Navbar.Toggle aria-controls="offcanvasNavbar" />
     <Navbar.Offcanvas
       id="offcanvasNavbar"

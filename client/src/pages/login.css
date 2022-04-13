@@ -1,0 +1,26 @@
+/* login styling */
+  
+  .rainbowLoginHeader {
+    height: 35vh;
+    background: url(../assets/images/rainbowHeader.png);
+    margin-bottom: 8rem;
+  }
+  
+  .signUpHeader {
+    height: 35vh;
+    border-right: 1px solid #000000;
+  }
+  
+  .contentBorder {
+    border-right: 1px solid #000000;
+  }
+  
+  .signupButton {
+    background: radial-gradient(55% 55% at 55% 55%, #F1F7D9 76.04%, rgba(241, 247, 217, 0) 100%);
+    border-radius: 27px;
+  }
+
+  .loginButton {
+    background: radial-gradient(55% 55% at 55% 55%, #E3F2F0 72.4%, rgba(227, 242, 240, 0) 100%);
+    border-radius: 27px;
+  }
