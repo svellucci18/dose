@@ -1,16 +1,24 @@
-//  make sure currentMood dataType is correct
-
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const consumableSchema = new Schema({
-  dose: {
-    type: Number,
-  },
 
+  name: {
+    type: String,
+  },
+  dosage: {
+    type: String,
+  },
   note: {
     type: String,
   },
+  moods: [{ 
+    type: Schema.Types.ObjectId,
+    ref: "Mood",
+  }],
 
 });
 
-module.exports = consumableSchema;
+const Consumable = mongoose.model("Consumable", consumableSchema);
+
+module.exports = Consumable;

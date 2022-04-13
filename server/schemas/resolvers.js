@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
+const Consumable = require('../models/Consumable');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -40,6 +41,24 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(context.user._id, args, {new: true});
+      }
+    },
+    addConsumable: async (parent, args, context) => {
+      const consumable = await Consumable.create(args);
+      return consumable;
+    },
+    updateConsumable: async (parent, args, context) => {
+      if (context.consumable) {
+        return await Consumable.findByIdAndUpdate(context.consumable._id, args, {new: true});
+      }
+    },
+    addMood: async (parent, args, context) => {
+      const mood = await Mood.create(args);
+      return mood;
     }
   }
 };
