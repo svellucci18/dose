@@ -8,13 +8,20 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+// we need a learn, about, and insights
+
+// instead of /home can we just do /
 import Home from './pages/Home';
+// different name we can use instead of signup or login? do we need a logout?
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+// change portfolio to dose
 import Profile from './pages/Profile';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,7 +53,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <NavBar />
-          <div className="container">
+          <div >
             <Routes>
               <Route 
                 path="/"
