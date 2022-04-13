@@ -29,11 +29,11 @@ const NavBar = () => {
           <Container >
             
               <p className="fs-6">
-                Login
+                login
               </p>
               <img src={mushroom} width="40" height="40" alt="mushroom"/>
               <p className="fs-6">
-                Logout
+                logout
               </p>
          
           </Container>
@@ -41,10 +41,10 @@ const NavBar = () => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3 ">
-          <Nav.Link href="#action1" id="home" className="whiteText fs-1 text-center py-5">Home</Nav.Link>
-          <Nav.Link href="#action2" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">Learn</Nav.Link>
-          <Nav.Link href="#action2" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">About</Nav.Link>
-          <Nav.Link href="#action2" id="dose" className="whiteText text-decoration-none fs-1 text-center pe-2">Dose</Nav.Link>
+          <Nav.Link href="#action1" id="home" className="whiteText fs-1 text-center py-5">home</Nav.Link>
+          <Nav.Link href="#action2" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</Nav.Link>
+          <Nav.Link href="#action2" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</Nav.Link>
+          <Nav.Link href="#action2" id="dose" className="whiteText text-decoration-none fs-1 text-center pe-2">dose</Nav.Link>
         </Nav>
       </Offcanvas.Body>
     </Navbar.Offcanvas>
