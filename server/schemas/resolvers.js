@@ -49,6 +49,7 @@ const resolvers = {
     },
     addConsumable: async (parent, args, context) => {
       const consumable = await Consumable.create(args);
+      // find a user by id and push the consumable id to their consumables list
       return consumable;
     },
     updateConsumable: async (parent, args, context) => {
