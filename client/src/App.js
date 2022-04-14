@@ -7,6 +7,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -44,7 +46,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="import Carousel from 'react-bootstrap/Carousel'">
           <NavBar />
           <div className="container">
             <Routes>
@@ -77,4 +79,5 @@ function App() {
   );
 }
 
+AOS.init()
 export default App;
