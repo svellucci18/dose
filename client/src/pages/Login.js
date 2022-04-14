@@ -71,11 +71,13 @@ const Login = (props) => {
         <Row>
 
           {/* Create Account Form */}
-          <Col sm={12} md={6}>
+
+          <Col xs={12} md={6}>
 
             <div className="signuploginCards card mx-auto">
                 <h2 className="text-center mb-5 signuploginTitle">Signup</h2>
                 <div className="card-body">
+
                   {data ? (
                     <p>
                       Success! You may now head{' '}
@@ -87,7 +89,7 @@ const Login = (props) => {
                       <h4 className="mt-3"> Email Address </h4>
                       <input
                         className="form-input pe-5"
-                        placeholder="Your email"
+                         placeholder="Your email"
                         name="email"
                         type="email"
                         value={formState.email}
@@ -118,6 +120,7 @@ const Login = (props) => {
                       <br/>
                       <br/>
                       <button
+
                         className="btn-lg btn-block signupButton mt-4"
                         style={{ cursor: 'pointer' }}
                         type="submit"
@@ -139,8 +142,9 @@ const Login = (props) => {
 
 
           {/* LOGIN Form */}
-          <Col sm={12} md={6}>
-            
+
+
+          <Col xs={12} md={6}>
               <div className="card signuploginCards ">
                 <h2 className="text-center mb-5 signuploginTitle">Login</h2>
                 <div className="card-body ">
@@ -163,6 +167,7 @@ const Login = (props) => {
                       />
                       <br/>
                       <br/>
+                          
                       <h4>Username</h4>
                       <input
                         className="form-input pe-5"
@@ -174,6 +179,7 @@ const Login = (props) => {
                       />
                       <br/>
                       <br/>
+                          
                       <h4>Password</h4>
                       <input
                         className="form-input pe-5"
