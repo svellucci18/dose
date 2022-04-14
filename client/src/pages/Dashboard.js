@@ -1,9 +1,13 @@
 import { Container, Row, Col, Button } from "react-bootstrap/";
+import DoseForm from '../components/DoseForm'
+
 
 const Dashboard = () => {
+
+  
+
   return (
     <Container>
-
         <Row>
             <h1 className="text-center mt-5">Welcome! { }</h1>
         </Row>
@@ -23,6 +27,14 @@ const Dashboard = () => {
       <Row>
         <Col>1 of 3</Col>
       </Row>
+
+<DoseForm/>
+
+
+
+
+
+
     </Container>
   );
 };
