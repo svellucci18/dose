@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
+import './login.css';
+import {  Container, Navbar, Offcanvas, Nav, NavDropdown, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
+
+
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -41,53 +45,154 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+    
+    <>
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
+        <Container fluid className="rainbowLoginHeader ">
+
+          <Row className="">
+
+            <Col xs={6} className="signUpHeader d-flex align-items-center justify-content-center">
+              <h2 className="">New Around Here?</h2>
+            </Col>
+
+            <Col xs={6} className="d-flex align-items-center justify-content-center">
+              <h2 className="text-center">Login to see your Dosing Data</h2> 
+            </Col>
+            
+
+          </Row>
+        </Container>
+
+
+      {/* form container */}
+
+      <Container className="mb-5 "> 
+        <Row>
+
+          {/* Create Account Form */}
+          <Col xs={12} sm={6} className="contentBorder">
+
+          <div className="card ">
+                <h4 className="card-header bg-dark text-light p-2 ">Signup</h4>
+                <div className="card-body ">
+                  {data ? (
+                    <p>
+                      Success! You may now head{' '}
+                      <Link to="/">back to the homepage.</Link>
+                    </p>
+                  ) : (
+                    <form onSubmit={handleFormSubmit}>
+                      
+                      <h4> Email Address </h4>
+                      <input
+                        className="form-input"
+                        placeholder="Your email"
+                        name="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                      />
+                      <br/>
+                      <br/>
+                      <h4>Password</h4>
+                      <input
+                        className="form-input"
+                        placeholder="******"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                      />
+                      <br/>
+                      <br/>
+                      <button
+                        className="btn btn-block signupButton"
+                        style={{ cursor: 'pointer' }}
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  )}
+
+                  {error && (
+                    <div className="my-3 p-3 bg-danger text-white">
+                      {error.message}
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </main>
+          
+          </Col>
+
+
+          {/* LOGIN Form */}
+          <Col xs={12} sm={6} className="">
+            
+              <div className="card ">
+                <h4 className="card-header bg-dark text-light p-2 ">Login</h4>
+                <div className="card-body ">
+                  {data ? (
+                    <p>
+                      Success! You may now head{' '}
+                      <Link to="/">back to the homepage.</Link>
+                    </p>
+                  ) : (
+                    <form onSubmit={handleFormSubmit}>
+                     
+                      <h4> Email Address </h4>
+                      <input
+                        className="form-input "
+                        placeholder="Your email"
+                        name="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                      />
+                      <br/>
+                      <br/>
+                      <h4>Password</h4>
+                      <input
+                        className="form-input "
+                        placeholder="******"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                      />
+                      <br/>
+                      <br/>
+                      <button
+                        className="btn btn-block loginButton"
+                        style={{ cursor: 'pointer' }}
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  )}
+
+                  {error && (
+                    <div className="my-3 p-3 bg-danger text-white">
+                      {error.message}
+                    </div>
+                  )}
+                </div>
+              </div>
+            
+          </Col>
+
+
+
+        </Row>
+      </Container>
+
+   </>
+
+
+    
+
   );
 };
 

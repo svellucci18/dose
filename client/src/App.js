@@ -7,14 +7,25 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+
+// we need a learn, about, and insights
+
+// instead of /home can we just do /
 import Home from './pages/Home';
+
 import Dashboard from './pages/Dashboard';
+
+
 import Login from './pages/Login';
+// change portfolio to dose
 import Profile from './pages/Profile';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,9 +55,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="import Carousel from 'react-bootstrap/Carousel'">
           <NavBar />
-          <div className="container">
+          <div >
             <Routes>
               <Route 
                 path="/"
@@ -77,4 +88,5 @@ function App() {
   );
 }
 
+AOS.init()
 export default App;
