@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
+  
   username: {
     type: String,
     required: true,
@@ -18,7 +19,12 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-  }
+  },
+  consumables: [{
+    type: Schema.Types.ObjectId,
+    ref: "Consumable",
+  }]
+
 });
 
 userSchema.pre('save', async function (next) {

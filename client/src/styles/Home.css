@@ -1,0 +1,12 @@
+.carousel {
+    width:700px;
+  height:393px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: black;
+}
+
+img{
+    height: 100%!important;
+}
+
