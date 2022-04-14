@@ -1,18 +1,17 @@
+
 import React, {useState} from 'react';
 import {  Form, Button } from "react-bootstrap/";
 
 
 
 
-const DoseForm = () => {
-
-const [consumables, setConsumables] = useState ([]); 
-
-const addConsumable = (item) => {
+const DoseList = () => {
 
 
-  
-}
+
+
+
+
 
 
 return( 
@@ -49,4 +48,10 @@ return(
 
 }
 
-export default DoseForm;
+
+    
+
+
+
+export default DoseList;
+
