@@ -1,16 +1,49 @@
-//  make sure currentMood dataType is correct
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const { Schema } = require("mongoose");
-
-const consumableSchema = new Schema({
-  dose: {
-    type: Number,
+const moodSchema = new Schema({
+  
+  dosed: {
+    type: Boolean
   },
-
-  note: {
-    type: String,
+  depressants: {
+    type: Boolean
+  },
+  lifestyle: {
+    type: Number, min: 1, max: 5
+  },
+  physicalHealth: {
+    type: Number, min: 1, max: 5
+  },
+  mentalHealth: {
+    type: Number, min: 1, max: 5
+  }, 
+  comment: {
+    type: String
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
   },
 
 });
 
-module.exports = consumableSchema;
+const consumableSchema = new Schema({
+
+  name: {
+    type: String,
+  },
+  dosage: {
+    type: String,
+  },
+  note: {
+    type: String,
+  },
+  moods: [moodSchema],
+
+});
+
+const Consumable = mongoose.model("Consumable", consumableSchema);
+
+module.exports = Consumable;
