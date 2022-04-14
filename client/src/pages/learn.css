@@ -1,0 +1,33 @@
+.blueMiniHeader {
+    background: linear-gradient(180deg, #E3F2F0 33.69%, rgba(196, 196, 196, 0) 81.36%);
+    height: 12vh;
+    width: 100vw;
+    margin-bottom: 10vh;
+}
+
+.orangeFloralImage {
+    height: 30rem;
+    width: 40rem;
+}
+
+.headerContainer {
+    margin-bottom: 12vh;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #000000da;
+}
+
+.nav-link {
+    color:black;
+}
+
+.nav-link:hover {
+    color: #a3c6c9;;
+}
+
+.tabContainer {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
