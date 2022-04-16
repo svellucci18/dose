@@ -2,19 +2,26 @@ import { Container, Row, Col, Button } from "react-bootstrap/";
 import DoseModal from "../components/DoseModal";
 import MoodModal from "../components/MoodModal";
 import { useState } from "react";
+import useDate from "../utils/useDate";
 
-import rainbowHeader from '../assets/images/rainbowHeader.png';
+// import css
+import '../styles/dashboard.css';
+
 import DataChart from "../components/Chart";
 
 const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openMood, setOpenMood] = useState(false);
 
+  const { date, time, wish } = useDate();
+
   return (
 
     <>
-     <div className="raimnbowMiniHeader d-flex justify-content-center align-items-center">
-            <h4 className="pb-4 pt-4"> ✨ Welcome [username] </h4>
+     <div className="rainbowMiniHeader d-flex justify-content-between align-items-center">
+        <div className="arrow">
+            <h4 className="pb-4 pt-4">  {wish} [username] -- {time} {date}</h4>
+        </div>
       </div>
 
     <Container>
@@ -62,7 +69,7 @@ const Dashboard = () => {
 
     <Container>
       <Row>
-        
+
         <Col>
         {/* list of user drugs */}
         </Col>

@@ -1,0 +1,32 @@
+.rainbowMiniHeader {
+    height: 5vh;
+    background: url(../assets/images/rainbowHeader.png);
+    margin-bottom: 8rem;
+}
+
+.arrow {
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-name: arrows_animation;
+    transform: translateX(-100%);
+  }
+  
+  @keyframes arrows_animation {
+    0% {
+      animation-timing-function: ease-out;
+      
+    }
+
+    50% {
+      animation-timing-function: ease-in;
+      transform: translateX(50vw);
+    }
+
+    100% {
+      transform: translateX(100vw);
+    }
+  }
