@@ -23,6 +23,7 @@ import Profile from './pages/Profile';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+// import DataChart from './components/Chart';  if we want to put the charts in their own page
 
 
 // Construct our main GraphQL API endpoint

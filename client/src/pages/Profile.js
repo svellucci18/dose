@@ -6,6 +6,8 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
+import DataChart from '../components/Chart';
+
 const Profile = () => {
   const { username: userParam } = useParams();
 
@@ -25,10 +27,14 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      <div>
+        <h4>
+          You need to be logged in to see this. Use the navigation links above to
+          sign up or log in!
+        </h4>
+        {/* chart put in here */}
+        <DataChart />
+      </div>
     );
   }
 
@@ -42,6 +48,11 @@ const Profile = () => {
         <div className="col-12 col-md-10 mb-5">
           Content Here
         </div>
+
+        <div className="Chart">
+          <DataChart />
+        </div>
+
         {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"

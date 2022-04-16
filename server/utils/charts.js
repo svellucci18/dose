@@ -1,5 +1,6 @@
 // boiler plate code.
 // need to install npm chart.js
+// need to query data dynamically for the user depending on inputs
 
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
