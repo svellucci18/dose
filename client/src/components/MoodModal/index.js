@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Button, Modal, ButtonGroup } from "react-bootstrap/";
 
 const MoodModal = (props) => {
+  
   const addMood = () => {
     console.log("mood added");
   };

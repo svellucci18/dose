@@ -15,20 +15,20 @@ const DoseModal = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header  className="text-center">
+      <Modal.Header  className="mx-auto">
         <Modal.Title>
           Add a new consumable!
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-      <Form>
-  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-    <Form.Label>Consumable name</Form.Label>
+      <Modal.Body >
+      <Form >
+  <Form.Group className="mx-auto" controlId="exampleForm.ControlInput1">
+    <Form.Label className="mx-auto">Consumable name</Form.Label>
     <Form.Control/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-    <Form.Label>Dosage amount</Form.Label>
+    <Form.Label className="mx-auto">Dosage amount</Form.Label>
     <Form.Control/>
   </Form.Group>
 
