@@ -7,6 +7,7 @@ import useDate from "../utils/useDate";
 // import css
 import '../styles/dashboard.css';
 
+import DataChart from "../components/Chart";
 
 const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -75,6 +76,10 @@ const Dashboard = () => {
 
       </Row>
     </Container>
+
+    <div>
+      <DataChart />
+    </div>
 
     </>
   );
