@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap/";
+<<<<<<< HEAD
 import { useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import {ADD_CONSUMABLE} from '../../utils/mutations';
 // import ConsumableList from '../ConsumableList'
+=======
+import '../../styles/modal.css';
+>>>>>>> main
 
 const DoseModal = (props) => {
   const [nameState, setNameState] = useState('');
@@ -46,12 +50,13 @@ const DoseModal = (props) => {
       centered
     >
       <Modal.Header  className="mx-auto">
-        <Modal.Title>
+        <Modal.Title className="fs-2">
           Add a new consumable!
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body >
+      <Modal.Body className="mt-4">
       <Form >
+<<<<<<< HEAD
   <Form.Group className="mx-auto" controlId="exampleForm.ControlInput1">
     <Form.Label name="name" value={nameState} className="mx-auto" onChange={handleChange}>Consumable name</Form.Label>
     <Form.Control/>
@@ -64,6 +69,20 @@ const DoseModal = (props) => {
 
   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
     <Form.Label  name="note" value={noteState} onChange={handleChange}>Leave a note for yourself</Form.Label>
+=======
+  <Form.Group className="mx-auto mb-4" controlId="exampleForm.ControlInput1">
+    <Form.Label className="mx-auto fs-4">Consumable name</Form.Label>
+    <Form.Control/>
+  </Form.Group>
+
+  <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
+    <Form.Label className="mx-auto fs-4">Dosage amount</Form.Label>
+    <Form.Control/>
+  </Form.Group>
+
+  <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
+    <Form.Label className="fs-4">Leave a note for yourself</Form.Label>
+>>>>>>> main
     <Form.Control as="textarea" rows={3} />
   </Form.Group>
 </Form>
@@ -72,13 +91,13 @@ const DoseModal = (props) => {
           onClick={() => {
             handleFormSubmit();
           }}
-        className="text-end">
+        className="text-end submitBtn">
           
           Submit
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Cancel</Button>
+        <Button className="cancelBtn" onClick={props.onHide}>Cancel</Button>
       </Modal.Footer>
     </Modal>
   );

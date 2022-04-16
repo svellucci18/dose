@@ -2,20 +2,35 @@ import { Container, Row, Col, Button } from "react-bootstrap/";
 import DoseModal from "../components/DoseModal";
 import MoodModal from "../components/MoodModal";
 import { useState } from "react";
+import useDate from "../utils/useDate";
+
+// import css
+import '../styles/dashboard.css';
+
+import DataChart from "../components/Chart";
 
 const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openMood, setOpenMood] = useState(false);
 
-  return (
-    <Container>
-      <Row>
-        <h1 className="text-center mt-5">Welcome! {}</h1>
-      </Row>
-      <Row className="mt-5">
+  const { date, time, wish } = useDate();
 
-        <Col className="mx-auto col-lg-6">
+  return (
+
+    <>
+     <div className="rainbowMiniHeader d-flex justify-content-between align-items-center">
+        <div className="arrow">
+            <h4 className="pb-4 pt-4">  {wish} [username] -- {time} {date}</h4>
+        </div>
+      </div>
+
+    <Container>
+
+      <Row className="mt-5 ">
+
+        <Col xs={6} className="d-flex align-items-center justify-content-center">
           <Button
+           className="p-3 fs-2"
             variant="dark"
             size="lg"
             onClick={() => {
@@ -31,8 +46,9 @@ const Dashboard = () => {
 
         </Col>
 
-        <Col>
+        <Col xs={6} className="d-flex align-items-center justify-content-center">
           <Button
+            className="p-3 fs-2"
             variant="dark"
             size="lg"
             onClick={() => {
@@ -48,10 +64,24 @@ const Dashboard = () => {
         </Col>
 
       </Row>
+    </Container>
+    
+
+    <Container>
       <Row>
-        <Col>{/* list of user drugs */}</Col>
+
+        <Col>
+        {/* list of user drugs */}
+        </Col>
+
       </Row>
     </Container>
+
+    <div>
+      <DataChart />
+    </div>
+
+    </>
   );
 };
 export default Dashboard;
