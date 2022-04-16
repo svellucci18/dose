@@ -15,8 +15,6 @@ import 'aos/dist/aos.css';
 
 // instead of /home can we just do /
 import Home from './pages/Home';
-// different name we can use instead of signup or login? do we need a logout?
-import Signup from './pages/Signup';
 import Login from './pages/Login';
 // change portfolio to dose
 import Profile from './pages/Profile';
@@ -67,10 +65,6 @@ function App() {
               <Route 
                 path="/login"
                 element={<Login />}
-              />
-              <Route 
-                path="/signup"
-                element={<Signup />}
               />
               <Route 
                 path="/me"
