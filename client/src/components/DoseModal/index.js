@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap/";
-<<<<<<< HEAD
 import { useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import {ADD_CONSUMABLE} from '../../utils/mutations';
 // import ConsumableList from '../ConsumableList'
-=======
 import '../../styles/modal.css';
->>>>>>> main
 
 const DoseModal = (props) => {
   const [nameState, setNameState] = useState('');
@@ -18,11 +15,18 @@ const DoseModal = (props) => {
 
   // for submitting the form and pushing the data to the database
   const handleFormSubmit =  async (event) => {
+    event.preventDefault();
     const {data} = await addConsumable({
       variables: {
-        
+        nameState,
+        dosageState,
+        noteState,
       },
     });
+    setNameState('');
+    setDosageState('');
+    setNoteState('');
+
     console.log("consumable added");
   };
 
@@ -56,36 +60,22 @@ const DoseModal = (props) => {
       </Modal.Header>
       <Modal.Body className="mt-4">
       <Form >
-<<<<<<< HEAD
-  <Form.Group className="mx-auto" controlId="exampleForm.ControlInput1">
-    <Form.Label name="name" value={nameState} className="mx-auto" onChange={handleChange}>Consumable name</Form.Label>
-    <Form.Control/>
-  </Form.Group>
+          <Form.Group className="mx-auto mb-4" controlId="exampleForm.ControlInput1">
+            <Form.Label name="name" value={nameState} className="mx-auto fs-4" onChange={handleChange}>Consumable name</Form.Label>
+            <Form.Control/>
+          </Form.Group>
 
-  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-    <Form.Label name="dosage" value={dosageState}  className="mx-auto" onChange={handleChange}>Dosage amount</Form.Label>
-    <Form.Control/>
-  </Form.Group>
+          <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
+            <Form.Label name="dosage" value={dosageState}  className="mx-auto fs-4" onChange={handleChange}>Dosage amount</Form.Label>
+            <Form.Control/>
+          </Form.Group>
 
-  <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-    <Form.Label  name="note" value={noteState} onChange={handleChange}>Leave a note for yourself</Form.Label>
-=======
-  <Form.Group className="mx-auto mb-4" controlId="exampleForm.ControlInput1">
-    <Form.Label className="mx-auto fs-4">Consumable name</Form.Label>
-    <Form.Control/>
-  </Form.Group>
+          <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
+            <Form.Label className="fs-4" name="note" value={noteState} onChange={handleChange}>Leave a note for yourself</Form.Label>
+            <Form.Control as="textarea" rows={3} />
+          </Form.Group>
 
-  <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-    <Form.Label className="mx-auto fs-4">Dosage amount</Form.Label>
-    <Form.Control/>
-  </Form.Group>
-
-  <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
-    <Form.Label className="fs-4">Leave a note for yourself</Form.Label>
->>>>>>> main
-    <Form.Control as="textarea" rows={3} />
-  </Form.Group>
-</Form>
+      </Form>
 
         <Button
           onClick={() => {
