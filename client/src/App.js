@@ -17,7 +17,7 @@ import 'aos/dist/aos.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 // change portfolio to dose
-import Profile from './pages/Profile';
+import Dashboard from './pages/Dashboard';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -67,8 +67,8 @@ function App() {
                 element={<Login />}
               />
               <Route 
-                path="/me"
-                element={<Profile />}
+                path="/dashboard"
+                element={<Dashboard />}
               />
               <Route 
                 path="/learn"
@@ -80,7 +80,7 @@ function App() {
               />
               <Route 
                 path="/profiles/:username"
-                element={<Profile />}
+                element={<Dashboard />}
               />
             </Routes>
           </div>
