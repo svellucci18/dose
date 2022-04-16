@@ -73,7 +73,6 @@ const Login = (props) => {
           {/* Create Account Form */}
 
           <Col xs={12} md={6}>
-
             <div className="signuploginCards card mx-auto">
                 <h2 className="text-center mb-5 signuploginTitle">Signup</h2>
                 <div className="card-body">
@@ -97,6 +96,7 @@ const Login = (props) => {
                       />
                       <br/>
                       <br/>
+
                       <h4>Username</h4>
                       <input
                         className="form-input pe-5"
@@ -142,9 +142,7 @@ const Login = (props) => {
 
 
           {/* LOGIN Form */}
-
-
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6}>           
               <div className="card signuploginCards ">
                 <h2 className="text-center mb-5 signuploginTitle">Login</h2>
                 <div className="card-body ">
@@ -154,8 +152,7 @@ const Login = (props) => {
                       <Link to="/">back to the homepage.</Link>
                     </p>
                   ) : (
-                    <form onSubmit={handleFormSubmit} className="text-center">
-                     
+                    <form onSubmit={handleFormSubmit} className="text-center">                   
                       <h4 className="mt-3"> Email Address </h4>
                       <input
                         className="form-input pe-5"
@@ -167,7 +164,7 @@ const Login = (props) => {
                       />
                       <br/>
                       <br/>
-                          
+
                       <h4>Username</h4>
                       <input
                         className="form-input pe-5"
