@@ -35,7 +35,7 @@ const consumableSchema = new Schema({
     type: String,
   },
   dosage: {
-    type: String,
+    type: String, 
   },
   note: {
     type: String,
