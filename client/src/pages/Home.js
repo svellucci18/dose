@@ -9,16 +9,16 @@ import "../styles/Home.css";
 const Home = () => {
   return (
     <Container fluid data-aos='fade-left'  data-aos-duration='900'>
-      <Row>
+      <Row className="text-center">
         <Col>
           {" "}
           <Carousel>
             <Carousel.Item interval={5000}>
-              <img className="d-block " src={carousel1} alt="First slide" />
+              <img className="d-block"  src={carousel1} alt="First slide" />
               <Carousel.Caption>
-                <h3>First slide label</h3>
+                <h3>Microdosing</h3>
                 <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  Self-care meets the scientific method.
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -26,18 +26,17 @@ const Home = () => {
               <img className="d-block" src={meditate} alt="Second slide" />
 
               <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>Isolate a variable</h3>
+                <p> Look for trends in your mood </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item interval={5000}>
               <img className="d-block " src={enlightend} alt="Third slide" />
 
               <Carousel.Caption>
-                <h3>Third slide label</h3>
+                <h3>Record daily</h3>
                 <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
+                Turn self-care into a habit
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -48,19 +47,8 @@ const Home = () => {
         <Col m={12}>
         <Card className="mt-5 mx-auto">
           <Card.Body>
-            <h1 className="text-center">Welcome to dose.</h1>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-        voluptas nulla pariatur?</Card.Body>
+            <h1 className="text-center">Welcome to dose.</h1> Humans are curious, humans are experts in identifying patterns. Dose makes collecting data about your well-being simple. Run experiments on yourself and see how the data trends.
+            Create your own protocol, check-in daily to record if you've microdosed and if you've taken any depressants. Rank your lifestyle on a scale of goblin mode to healthy bitch and lastly rank your mental and physical health. </Card.Body>
         </Card>
         </Col>
 

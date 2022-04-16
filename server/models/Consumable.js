@@ -4,19 +4,24 @@ const { Schema } = mongoose;
 const moodSchema = new Schema({
   
   dosed: {
-    type: Boolean
+    type: Boolean,
+    required: true,
   },
   depressants: {
-    type: Boolean
+    type: Boolean,
+    required: true,
   },
   lifestyle: {
-    type: Number, min: 1, max: 5
+    type: Number, min: 1, max: 5,
+    required: true,
   },
   physicalHealth: {
-    type: Number, min: 1, max: 5
+    type: Number, min: 1, max: 5,
+    required: true,
   },
   mentalHealth: {
-    type: Number, min: 1, max: 5
+    type: Number, min: 1, max: 5,
+    required: true,
   }, 
   comment: {
     type: String
@@ -33,12 +38,15 @@ const consumableSchema = new Schema({
 
   name: {
     type: String,
+    required: true,
   },
   dosage: {
-    type: String, 
+    type: String,
+    required: true,
   },
   note: {
     type: String,
+    required: true,
   },
   moods: [moodSchema],
 
