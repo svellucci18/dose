@@ -11,9 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-// we need insights page
 
-// instead of /home can we just do /
 import Home from './pages/Home';
 import Login from './pages/Login';
 // change portfolio to dose
