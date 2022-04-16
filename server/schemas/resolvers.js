@@ -48,18 +48,43 @@ const resolvers = {
       }
     },
     addConsumable: async (parent, args, context) => {
-      const consumable = await Consumable.create(args);
       // find a user by id and push the consumable id to their consumables list
-      return consumable;
+      if (context.user) {
+        const consumable = await Consumable.create({
+          name,
+          dosage,
+          note,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { consumables: consumable._id } }
+        );
+
+        return consumable;
+      }
     },
     updateConsumable: async (parent, args, context) => {
       if (context.consumable) {
         return await Consumable.findByIdAndUpdate(context.consumable._id, args, {new: true});
       }
     },
-    addMood: async (parent, args, context) => {
-      const mood = await Mood.create(args);
-      return mood;
+    addMood: async (parent, { consumableId, dosed }, context) => {
+      if (context.user) {
+        return Consumable.findOneAndUpdate(
+          { _id: consumableId },
+          {
+            $addToSet: {
+              moods: { dosed, depressants, lifestyle, physicalHealth, mentalHealth, comment },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
     }
   }
 };
