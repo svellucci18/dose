@@ -27,6 +27,7 @@ export const ADD_USER = gql`
 export const UPDATE_USER = gql`
   mutation updateUser($consumables: [ID]) {
     updateUser(consumables: $consumables) {
+      _id
       name
       dosage
       note
@@ -46,6 +47,7 @@ export const UPDATE_USER = gql`
 export const ADD_CONSUMABLE = gql`
   mutation addConsumable($name: String!, $dosage: String!, $note: String!) {
     addConsumable(name: $name, dosage: $dosage, note: $note) {
+      _id
       name
       dosage
       note
@@ -54,8 +56,9 @@ export const ADD_CONSUMABLE = gql`
 `;
 
 export const UPDATE_CONSUMABLE = gql`
-  mutation updateConsumable($moods: [ID]) {
+  mutation updateConsumable($moods: [ID!]) {
     updateConsumable(moods: $moods) {
+      _id
       dosed
       depressants
       lifestyle
@@ -69,6 +72,7 @@ export const UPDATE_CONSUMABLE = gql`
 export const ADD_MOOD = gql`
   mutation addMood($dosed: Boolean, $depressants: Boolean, $lifestyle: Int, $physicalHealth: Int, $mentalHealth: Int, $comment: String) {
     addMood(dosed: $dosed, depressants: $depressants, lifestyle: $lifestyle, physicalHealth: $physicalHealth, mentalHealth: $mentalHealth, comment: $comment) {
+      _id
       dosed
       depressants
       lifestyle

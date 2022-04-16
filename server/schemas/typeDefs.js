@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   
   type Mood {
-    _id: ID
+    _id: ID!
     dosed: Boolean!
     depressants: Boolean!
     lifestyle: Int!
@@ -13,7 +13,7 @@ const typeDefs = gql`
   }
 
   type Consumable {
-    _id: ID
+    _id: ID!
     name: String!
     dosage: String!
     note: String
@@ -21,7 +21,7 @@ const typeDefs = gql`
   }
 
   type User {
-    _id: ID
+    _id: ID!
     username: String
     email: String
     password: String
@@ -42,9 +42,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(consumables: [ID]): User
+    updateUser(consumables: [ID!]): User
     addConsumable(name: String, dosage: String, note: String): Consumable
-    updateConsumable(moods: [ID]): Consumable
+    updateConsumable(moods: [ID!]): Consumable
     addMood(dosed: Boolean, depressants: Boolean, lifestyle: Int!, physicalHealth: Int!, mentalHealth: Int!, comment: String): Mood
   }
 `;

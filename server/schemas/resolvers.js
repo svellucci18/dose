@@ -17,6 +17,20 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    // consumables: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return Consumable.find(params).sort({ createdAt: -1 });
+    // },
+    // consumable: async (parent, { consumableId }) => {
+    //   return Consumable.findOne({ _id: consumableId });
+    // },
+    // moods: async (parent, { name }) => {
+    //   const params = name ? { name } : {};
+    //   return Mood.find(params).sort({ createdAt: -1 });
+    // },
+    // mood: async (parent, { moodId }) => {
+    //   return Mood.findOne({ _id: moodId });
+    // },
   },
 
   Mutation: {
@@ -47,7 +61,7 @@ const resolvers = {
         return await User.findByIdAndUpdate(context.user._id, args, {new: true});
       }
     },
-    addConsumable: async (parent, args, context) => {
+    addConsumable: async (parent, {name, dosage, note}, context) => {
       // find a user by id and push the consumable id to their consumables list
       if (context.user) {
         const consumable = await Consumable.create({
