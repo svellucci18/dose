@@ -11,15 +11,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-// we need insights page
 
-// instead of /home can we just do /
 import Home from './pages/Home';
-// different name we can use instead of signup or login? do we need a logout?
-import Signup from './pages/Signup';
 import Login from './pages/Login';
 // change portfolio to dose
-import Profile from './pages/Profile';
+import Dashboard from './pages/Dashboard';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -70,12 +66,8 @@ function App() {
                 element={<Login />}
               />
               <Route 
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route 
-                path="/me"
-                element={<Profile />}
+                path="/dashboard"
+                element={<Dashboard />}
               />
               <Route 
                 path="/learn"
@@ -87,7 +79,7 @@ function App() {
               />
               <Route 
                 path="/profiles/:username"
-                element={<Profile />}
+                element={<Dashboard />}
               />
             </Routes>
           </div>

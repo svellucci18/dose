@@ -63,7 +63,7 @@ body {
   color: var(--graphColorFive);
 }
 
-#dose:hover {
+#dashboard:hover {
   color: var(--graphColorSix);
 }
 
