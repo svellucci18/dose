@@ -4,8 +4,8 @@ const typeDefs = gql`
   
   type Mood {
     _id: ID
-    dosed: Boolean
-    depressants: Boolean
+    dosed: Boolean!
+    depressants: Boolean!
     lifestyle: Int!
     physicalHealth: Int!
     mentalHealth: Int!
@@ -14,8 +14,8 @@ const typeDefs = gql`
 
   type Consumable {
     _id: ID
-    name: String
-    dosage: String
+    name: String!
+    dosage: String!
     note: String
     moods: [Mood]
   }
