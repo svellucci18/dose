@@ -32,7 +32,7 @@ const NavBar = () => {
           <a href="/" id="home" className="whiteText fs-1 text-center py-5 text-decoration-none">home</a>
           <a href="/learn" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</a>
           <a href="/about" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</a>
-          <a href="/dose" id="dose" className="whiteText text-decoration-none fs-1 text-center pe-2">dose</a>
+          <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-1 text-center pe-2">dashboard</a>
         
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
