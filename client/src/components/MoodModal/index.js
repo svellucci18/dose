@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, Button, Modal, ButtonGroup } from "react-bootstrap/";
 
+import '../../styles/modal.css';
+
 const MoodModal = (props) => {
   
   const addMood = () => {
@@ -15,30 +17,33 @@ const MoodModal = (props) => {
       centered
     >
       <Modal.Header className="mx-auto">
-        <Modal.Title>Track your current mood</Modal.Title>
+        <Modal.Title className="fs-2">Track your current mood</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="mt-4">
         <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label >Did you dose?</Form.Label>
-            <div>  <Button className="m-3">Yes</Button>
-             <Button>No</Button>
+          <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
+            <Form.Label className="fs-4">Did you dose?</Form.Label>
+            <div className="mx-auto">  
+              <Button className="me-2 btn-dark moodBtn">Yes</Button>
+             <Button className="me-2 btn-dark moodBtn">No</Button>
             </div>
           </Form.Group>
 
 
-          <Form.Group className="mb-3 text-center" controlId="exampleForm.ControlInput1">
-            <Form.Label >How do you feel today? Rate how you feel mentally below.</Form.Label>
-          <div>
-              <Button className="mx-auto">1</Button> <Button>2</Button> <Button>3</Button> <Button>4</Button> <Button>5</Button>
+          <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
+            <Form.Label className="fs-4" >How do you feel today? Rate how you feel mentally below.</Form.Label>
+          <div className="mx-auto">
+              <Button className="mx-2 btn-dark moodBtn" value="1">1</Button> 
+              <Button className="mx-2 btn-dark moodBtn" value="2">2</Button> 
+              <Button className="mx-2 btn-dark moodBtn" value="3">3</Button> 
+              <Button className="mx-2 btn-dark moodBtn" value="4">4</Button> 
+              <Button className="mx-2 btn-dark moodBtn" value="5">5</Button>
           </div>
-    
- 
 
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Leave a note for yourself</Form.Label>
+          <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
+            <Form.Label className="fs-4">Leave a note for yourself</Form.Label>
             <Form.Control as="textarea" rows={3} />
           </Form.Group>
         </Form>
@@ -47,13 +52,13 @@ const MoodModal = (props) => {
           onClick={() => {
             addMood();
           }}
-          className="text-end"
+          className="text-end submitBtn"
         >
           Submit
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Cancel</Button>
+        <Button className="cancelBtn" onClick={props.onHide}>Cancel</Button>
       </Modal.Footer>
     </Modal>
   );
