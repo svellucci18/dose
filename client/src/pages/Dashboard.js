@@ -4,6 +4,7 @@ import MoodModal from "../components/MoodModal";
 import { useState } from "react";
 
 import rainbowHeader from '../assets/images/rainbowHeader.png';
+import DataChart from "../components/Chart";
 
 const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -68,6 +69,10 @@ const Dashboard = () => {
 
       </Row>
     </Container>
+
+    <div>
+      <DataChart />
+    </div>
 
     </>
   );
