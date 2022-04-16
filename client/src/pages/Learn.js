@@ -11,7 +11,7 @@ const Learn = () => {
     return (
         <>
             <div className="blueMiniHeader d-flex justify-content-center align-items-center">
-                <h3 className="mx-auto pt-4"> ✨ Highlight of the Week: Learn How to Grow Your Own Medicine</h3>
+                <h3 className="mx-auto pb-4"> ✨ Highlight of the Week: Learn How to Grow Your Own Medicine</h3>
             </div>
 
             {/* Main Header with Image */}
@@ -49,7 +49,7 @@ const Learn = () => {
                         </Nav.Item>
                         <Nav.Item>
                         <Nav.Link className="p-3 tabThree" eventKey="third">
-                            <h4> Tips/Tricks </h4>
+                            <h4> Tips / Tricks </h4>
                         </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
