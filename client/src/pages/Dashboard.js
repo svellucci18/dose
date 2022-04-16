@@ -1,9 +1,11 @@
 import { Container, Row, Col, Button } from "react-bootstrap/";
-import DoseForm from '../components/DoseForm'
-
+import DoseModal from '../components/DoseModal'
+import MoodModal from '../components/MoodModal'
+import { useState } from "react";
 
 const Dashboard = () => {
 
+  const [openModal, setOpenModal] = useState(false);
   
 
   return (
@@ -14,21 +16,42 @@ const Dashboard = () => {
       <Row className="mt-5">
 
         <Col className="mx-auto col-lg-6">
-          <Button className="col-lg-6" variant="dark" size="lg">
-            Track new dose
-          </Button>{" "}
+
+        <Button variant="dark" size="lg" onClick={() => {
+          setOpenModal(true);
+        }} >
+       Track new dose
+        </Button >
+
+        <DoseModal
+        show={openModal}
+        onHide={() => setOpenModal(false)}/>
+
         </Col>
+
         <Col >
-          <Button className="col-lg-6" variant="dark" size="lg">
-            View doses
-          </Button>
+
+        <Button variant="dark" size="lg" onClick={() => {
+          setOpenModal(true);
+        }} >
+       Track new mood
+        </Button >
+        
+        <MoodModal show={openModal}
+        onHide={() => setOpenModal(false)}/>
+
         </Col>
+
+
       </Row>
       <Row>
-        <Col>1 of 3</Col>
+        <Col>
+        {/* list of user drugs */}
+        
+        </Col>
       </Row>
 
-<DoseForm/>
+
 
 
 
