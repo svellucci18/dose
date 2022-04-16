@@ -11,7 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-// we need a learn, about, and insights
+// we need insights page
 
 // instead of /home can we just do /
 import Home from './pages/Home';
@@ -24,6 +24,9 @@ import Profile from './pages/Profile';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 // import DataChart from './components/Chart';  if we want to put the charts in their own page
+
+import Learn from './pages/Learn';
+import About from './pages/About';
 
 
 // Construct our main GraphQL API endpoint
@@ -75,6 +78,14 @@ function App() {
                 element={<Profile />}
               />
               <Route 
+                path="/learn"
+                element={<Learn />}
+              />
+               <Route 
+                path="/about"
+                element={<About />}
+              />
+              <Route 
                 path="/profiles/:username"
                 element={<Profile />}
               />
@@ -87,5 +98,5 @@ function App() {
   );
 }
 
-AOS.init()
+AOS.init();
 export default App;

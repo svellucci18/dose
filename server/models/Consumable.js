@@ -33,12 +33,15 @@ const consumableSchema = new Schema({
 
   name: {
     type: String,
+    required: true,
   },
   dosage: {
     type: String,
+    required: true,
   },
   note: {
     type: String,
+    required: true,
   },
   moods: [moodSchema],
 
