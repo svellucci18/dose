@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap/";
-import { useParams } from 'react-router-dom';
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import {ADD_CONSUMABLE} from '../../utils/mutations';
+import Auth from '../../utils/auth';
 // import ConsumableList from '../ConsumableList'
 import '../../styles/modal.css';
 
@@ -21,6 +21,7 @@ const DoseModal = (props) => {
         nameState,
         dosageState,
         noteState,
+        commentAuthor: Auth.getProfile().data.username,
       },
     });
     setNameState('');
@@ -59,7 +60,7 @@ const DoseModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mt-4">
-      <Form >
+      <Form onSubmit={handleFormSubmit}>
           <Form.Group className="mx-auto mb-4" controlId="exampleForm.ControlInput1">
             <Form.Label name="name" value={nameState} className="mx-auto fs-4" onChange={handleChange}>Consumable name</Form.Label>
             <Form.Control/>
@@ -75,16 +76,14 @@ const DoseModal = (props) => {
             <Form.Control as="textarea" rows={3} />
           </Form.Group>
 
-      </Form>
+          {/* should this button be inside or outside of the form? */}
+          <Button type="submit"
+          className="text-end submitBtn">
+            Submit
+          </Button>
 
-        <Button
-          onClick={() => {
-            handleFormSubmit();
-          }}
-        className="text-end submitBtn">
-          
-          Submit
-        </Button>
+        </Form> 
+            
       </Modal.Body>
       <Modal.Footer>
         <Button className="cancelBtn" onClick={props.onHide}>Cancel</Button>
