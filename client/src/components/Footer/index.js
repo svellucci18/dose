@@ -1,9 +1,12 @@
 const styles = {
   footerStyle:{
-    position: "fixed",
+  position: "fixed",
+  color: "white",
   left: 0,
-  bottom: 0,
-color: "white"}
+    bottom: 0,
+    
+    width: "100%",
+    overflow: "hidden"}
 }
 
 
