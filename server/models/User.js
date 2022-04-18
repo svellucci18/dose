@@ -23,10 +23,6 @@ const userSchema = new Schema({
   consumables: [{
     type: Schema.Types.ObjectId,
     ref: "Consumable",
-    commentAuthor: {
-      type: String,
-      required: true,
-    },
   }]
 
 });

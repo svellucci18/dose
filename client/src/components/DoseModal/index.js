@@ -7,23 +7,27 @@ import Auth from '../../utils/auth';
 import '../../styles/modal.css';
 
 const DoseModal = (props) => {
-  const [nameState, setNameState] = useState('');
-  const [dosageState, setDosageState] = useState('');
-  const [noteState, setNoteState] = useState('');
+  const [name, setNameState] = useState('');
+  const [dosage, setDosageState] = useState('');
+  const [note, setNoteState] = useState('');
   
   const [addConsumable] = useMutation(ADD_CONSUMABLE);
 
   // for submitting the form and pushing the data to the database
   const handleFormSubmit =  async (event) => {
     event.preventDefault();
+    console.log(name);
+    console.log(dosage);
+    console.log(note);
+
     const {data} = await addConsumable({
       variables: {
-        nameState,
-        dosageState,
-        noteState,
-        commentAuthor: Auth.getProfile().data.username,
+        name,
+        dosage,
+        note,
       },
     });
+    console.log(data)
     setNameState('');
     setDosageState('');
     setNoteState('');
@@ -34,8 +38,9 @@ const DoseModal = (props) => {
   //for filling out the form with user input typing
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+    console.log(name, value);
     if (name === 'name') {
+      console.log("changing name")
       setNameState(value);
     }
     if (name === 'dosage') {
@@ -62,18 +67,18 @@ const DoseModal = (props) => {
       <Modal.Body className="mt-4">
       <Form onSubmit={handleFormSubmit}>
           <Form.Group className="mx-auto mb-4" controlId="exampleForm.ControlInput1">
-            <Form.Label name="name" value={nameState} className="mx-auto fs-4" onChange={handleChange}>Consumable name</Form.Label>
-            <Form.Control/>
+            <Form.Label className="mx-auto fs-4">Consumable name</Form.Label>
+            <Form.Control  name="name" value={name} onChange={handleChange}/>
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-            <Form.Label name="dosage" value={dosageState}  className="mx-auto fs-4" onChange={handleChange}>Dosage amount</Form.Label>
-            <Form.Control/>
+            <Form.Label className="mx-auto fs-4">Dosage amount</Form.Label>
+            <Form.Control name="dosage" value={dosage} onChange={handleChange}/>
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
-            <Form.Label className="fs-4" name="note" value={noteState} onChange={handleChange}>Leave a note for yourself</Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Label className="fs-4">Leave a note for yourself</Form.Label>
+            <Form.Control as="textarea" rows={3} name="note" value={note} onChange={handleChange} />
           </Form.Group>
 
           {/* should this button be inside or outside of the form? */}
