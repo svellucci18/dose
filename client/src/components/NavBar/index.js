@@ -51,7 +51,7 @@ const NavBar = () => {
           <Container className="mx-auto pb-2 loginContainer" >
             <Row >
               {Auth.loggedIn() ? (
-                <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" onClick={logout}>logout</Link>
+                <Button className= "fs-5 text-decoration-none whiteText align-content-start loginButton" onClick={logout}>logout</Button>
                       ) : (
                         <><Col xs={4}>
 
