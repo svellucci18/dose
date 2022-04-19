@@ -65,7 +65,7 @@ const NavBar = () => {
                           <img src={mushroom} width="60" height="60" alt="mushroom" />
 
                         </Col><Col xs={4}>
-                        <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/signup">signup</Link>
+                        <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">signup</Link>
                         </Col></>
 
 
