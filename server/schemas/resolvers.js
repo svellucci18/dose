@@ -1,6 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
-const Consumable = require('../models/Consumable');
+const { User, Consumable } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -17,7 +16,16 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-
+    consumables: async () => {
+      return Consumable.find();
+    },
+    // moods: async (parent, { name }) => {
+    //   const params = name ? { name } : {};
+    //   return Mood.find(params).sort({ createdAt: -1 });
+    // },
+    // mood: async (parent, { moodId }) => {
+    //   return Mood.findOne({ _id: moodId });
+    // },
   },
 
   Mutation: {

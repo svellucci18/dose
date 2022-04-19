@@ -40,7 +40,6 @@ const DoseModal = (props) => {
     const { name, value } = event.target;
     console.log(name, value);
     if (name === 'name') {
-      console.log("changing name")
       setNameState(value);
     }
     if (name === 'dosage') {
@@ -68,7 +67,7 @@ const DoseModal = (props) => {
       <Form onSubmit={handleFormSubmit}>
           <Form.Group className="mx-auto mb-4" controlId="exampleForm.ControlInput1">
             <Form.Label className="mx-auto fs-4">Consumable name</Form.Label>
-            <Form.Control  name="name" value={name} onChange={handleChange}/>
+            <Form.Control name="name" value={name} onChange={handleChange}/>
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
