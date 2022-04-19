@@ -3,6 +3,13 @@ import DoseModal from "../components/DoseModal";
 import MoodModal from "../components/MoodModal";
 import { useState } from "react";
 import useDate from "../utils/useDate";
+import Auth from '../utils/auth';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { Navigate, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+
+
+
 
 // import css
 import '../styles/dashboard.css';
@@ -11,13 +18,47 @@ import DataChart from "../components/Chart";
 
 const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
+
   const [openMood, setOpenMood] = useState(false);
 
   const { date, time, wish } = useDate();
+  
+  const { username: userParam } = useParams();
+
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    variables: { username: userParam },
+  });
+
+  const user = data?.me || data?.user || {};
+  // navigate to personal profile page if username is yours
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Navigate to="/me" />;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user?.username) {
+    return (
+      <h4>
+        You need to be logged in to see this. Use the navigation links above to
+        sign up or log in!
+      </h4>
+    );
+  }
+
+
+  
+  
 
   return (
 
+
+  
     <>
+
+
      <div className="rainbowMiniHeader d-flex justify-content-between align-items-center">
         <div className="arrow">
             <h4 className="pb-4 pt-4">  {wish} [username] -- {time} {date}</h4>

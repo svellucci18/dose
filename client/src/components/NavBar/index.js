@@ -1,8 +1,10 @@
 import React from 'react';
-import {  Container, Navbar, Offcanvas, Nav, Link, NavDropdown, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
+import {  Container, Navbar, Offcanvas, Nav, NavDropdown, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
 
 import Auth from '../../utils/auth';
 
+import { Link } from 'react-router-dom';
+ 
 
 // import images
 import mushroom from '../../assets/images/mushroom.png';
@@ -37,22 +39,26 @@ const NavBar = () => {
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
             <Row >
-                <Col xs={4} >
-                  <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
-                    login
-                  </a>
-                </Col>
+              {Auth.loggedIn() ? (
+                <Button onClick={logout}>logout</Button>
+                      ) : (
+                        <><Col xs={4}>
 
-                <Col xs={4}>
-                  <img src={mushroom} width="60" height="60" alt="mushroom"/>
-                </Col>
-            {/* /////TODO: Need to include logic to show logout link when user is logged in */}
-                <Col xs={4}>
-                  <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
-                    signup
-                  </a>
-                </Col>
+                        <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">login</Link>
 
+
+                      </Col>
+
+                      <Col xs={4}>
+
+                          <img src={mushroom} width="60" height="60" alt="mushroom" />
+
+                        </Col><Col xs={4}>
+                        <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/signup">signup</Link>
+                        </Col></>
+
+
+                      ) }
             </Row>
           </Container>
           </div>
