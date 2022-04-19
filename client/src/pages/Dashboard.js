@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from "react-bootstrap/";
+import { Container, Row, Col, Button, Card } from "react-bootstrap/";
 import DoseModal from "../components/DoseModal";
 import MoodModal from "../components/MoodModal";
 import { useState } from "react";
@@ -41,10 +41,22 @@ const Dashboard = () => {
 
   if (!user?.username) {
     return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      // <h4>
+      //   You need to be logged in to see this. Use the navigation links above to
+      //   sign up or log in!
+      // </h4>
+          <Container>
+          <Card class = "mx-auto" style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F254242341451286817%2F&psig=AOvVaw3UGJl2STSkczE0UPq_8mwI&ust=1650428320992000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJigjuCin_cCFQAAAAAdAAAAABAQ" />
+        <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+          <Card.Text>
+      You need to be logged in to see this. Use the navigation links above to sign up or log in!
+          </Card.Text>
+          <Button variant="primary">login</Button>
+          </Card.Body>
+            </Card>
+            </Container>
     );
   }
 
