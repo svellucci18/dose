@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { default: MoodModal } = require('../../client/src/components/MoodModal');
 const { User, Consumable } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -19,13 +20,10 @@ const resolvers = {
     consumables: async () => {
       return Consumable.find();
     },
-    // moods: async (parent, { name }) => {
-    //   const params = name ? { name } : {};
-    //   return Mood.find(params).sort({ createdAt: -1 });
+    // moods: async () => {
+    //   return Mood.find();
     // },
-    // mood: async (parent, { moodId }) => {
-    //   return Mood.findOne({ _id: moodId });
-    // },
+
   },
 
   Mutation: {
