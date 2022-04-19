@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const moodSchema = new Schema({
   
@@ -48,7 +48,7 @@ const consumableSchema = new Schema({
     type: String,
     required: true,
   },
-  // moods: [moodSchema],
+  moods: [moodSchema],
 
 });
 
