@@ -19,3 +19,14 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_CONSUMABLES = gql`
+  query getThoughts {
+    thoughts {
+      _id
+      thoughtText
+      thoughtAuthor
+      createdAt
+    }
+  }
+`;

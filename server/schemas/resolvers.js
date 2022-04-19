@@ -17,6 +17,7 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
   },
 
   Mutation: {
@@ -47,8 +48,9 @@ const resolvers = {
         return await User.findByIdAndUpdate(context.user._id, args, {new: true});
       }
     },
-    addConsumable: async (parent, args, context) => {
+    addConsumable: async (parent, {name, dosage, note}, context) => {
       // find a user by id and push the consumable id to their consumables list
+      console.log(context.user)
       if (context.user) {
         const consumable = await Consumable.create({
           name,

@@ -48,7 +48,7 @@ const consumableSchema = new Schema({
     type: String,
     required: true,
   },
-  moods: [moodSchema],
+  // moods: [moodSchema],
 
 });
 
