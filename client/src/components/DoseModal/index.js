@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap/";
 import { useMutation } from '@apollo/client';
 import {ADD_CONSUMABLE} from '../../utils/mutations';
-import Auth from '../../utils/auth';
+// import Auth from '../../utils/auth';
 // import ConsumableList from '../ConsumableList'
 import '../../styles/modal.css';
 
@@ -60,7 +60,7 @@ const DoseModal = (props) => {
     >
       <Modal.Header  className="mx-auto">
         <Modal.Title className="fs-2">
-          Add a new consumable!
+          Add a consumable to run a dosing trial (isolating variables is recommended)!
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mt-4">
@@ -71,16 +71,15 @@ const DoseModal = (props) => {
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-            <Form.Label className="mx-auto fs-4">Dosage amount</Form.Label>
+            <Form.Label className="mx-auto fs-4">Dosing range</Form.Label>
             <Form.Control name="dosage" value={dosage} onChange={handleChange}/>
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
-            <Form.Label className="fs-4">Leave a note for yourself</Form.Label>
+            <Form.Label className="fs-4">Describe the protocol(s)/dosing schedule that you experimenting with?</Form.Label>
             <Form.Control as="textarea" rows={3} name="note" value={note} onChange={handleChange} />
           </Form.Group>
 
-          {/* should this button be inside or outside of the form? */}
           <Button type="submit"
           className="text-end submitBtn">
             Submit
