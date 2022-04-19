@@ -1,8 +1,10 @@
 import React from 'react';
-import {  Container, Navbar, Offcanvas, Nav, Link, NavDropdown, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
+import {  Container, Navbar, Offcanvas, Nav, NavDropdown, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
 
 import Auth from '../../utils/auth';
 
+import { Link } from 'react-router-dom';
+ 
 
 // import images
 import mushroom from '../../assets/images/mushroom.png';
@@ -29,30 +31,45 @@ const NavBar = () => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3 ">
-          <a href="/" id="home" className="whiteText fs-1 text-center py-5 text-decoration-none">home</a>
-          <a href="/learn" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</a>
-          <a href="/about" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</a>
-          <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-1 text-center pe-2">dashboard</a>
-        
+          {/* <a href="/" id="home" className="whiteText fs-1 text-center py-5 text-decoration-none">home</a> */}
+
+          <Link id="home" className="whiteText fs-1 text-center py-5 text-decoration-none" to="/">home</Link>
+
+          {/* <a href="/learn" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</a> */}
+
+          <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/learn">learn</Link>
+
+          {/* <a href="/about" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</a> */}
+
+          <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/about">about</Link>
+
+          {/* <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-1 text-center pe-2">dashboard</a> */}
+
+          <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/dashboard">dashboard</Link>
+
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
             <Row >
-                <Col xs={4} >
-                  <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
-                    login
-                  </a>
-                </Col>
+              {Auth.loggedIn() ? (
+                <Button className= "fs-5 text-decoration-none whiteText align-content-start loginButton" onClick={logout}>logout</Button>
+                      ) : (
+                        <><Col xs={4}>
 
-                <Col xs={4}>
-                  <img src={mushroom} width="60" height="60" alt="mushroom"/>
-                </Col>
-            {/* /////TODO: Need to include logic to show logout link when user is logged in */}
-                <Col xs={4}>
-                  <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
-                    signup
-                  </a>
-                </Col>
+                        <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">login</Link>
 
+
+                      </Col>
+
+                      <Col xs={4}>
+
+                          <img src={mushroom} width="60" height="60" alt="mushroom" />
+
+                        </Col><Col xs={4}>
+                        <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/signup">signup</Link>
+                        </Col></>
+
+
+                      ) }
             </Row>
           </Container>
           </div>
