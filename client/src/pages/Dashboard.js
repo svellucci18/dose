@@ -3,13 +3,17 @@ import DoseModal from "../components/DoseModal";
 import MoodModal from "../components/MoodModal";
 import { useState } from "react";
 import useDate from "../utils/useDate";
-
+import ConsumableList from "../components/ConsumableList";
 // import css
 import '../styles/dashboard.css';
 
 import DataChart from "../components/Chart";
 
 const Dashboard = () => {
+
+
+
+  
   const [openModal, setOpenModal] = useState(false);
   const [openMood, setOpenMood] = useState(false);
 
@@ -64,7 +68,7 @@ const Dashboard = () => {
       <Row>
 
         <Col>
-        {/* <ConsumableList/> */}
+        <ConsumableList/>
         </Col>
 
       </Row>

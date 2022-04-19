@@ -46,7 +46,7 @@ const NavBar = () => {
                 <Col xs={4}>
                   <img src={mushroom} width="60" height="60" alt="mushroom"/>
                 </Col>
-            {/* /////TODO: Need to include logic to show logout link when user is logged in */}
+           
                 <Col xs={4}>
                   <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
                     signup
