@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Form, Button, Modal, ButtonGroup } from "react-bootstrap/";
+// import React from "react";
+import { useState } from "react";
+import { Form, Button, Modal } from "react-bootstrap/";
 import { useMutation } from '@apollo/client';
 import {ADD_MOOD} from '../../utils/mutations';
 import '../../styles/modal.css';
@@ -86,6 +87,7 @@ const MoodModal = (props) => {
           {/* Did you dose */}
           <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
             <Form.Label className="fs-4">Did you dose?</Form.Label>
+            <Form.Control name="dosed" value={dosed} onChange={handleChange}/>
             <div className="mx-auto">  
               <Button className="me-2 btn-dark moodBtn">Yes</Button>
               <Button className="me-2 btn-dark moodBtn">No</Button>
@@ -94,6 +96,7 @@ const MoodModal = (props) => {
           {/* Depressants */}
           <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
             <Form.Label className="fs-4">Did you take any depressants today (ie alcohol/medications)?</Form.Label>
+            <Form.Control name="depressants" value={depressants} onChange={handleChange}/>
             <div className="mx-auto">  
               <Button className="me-2 btn-dark moodBtn">Yes</Button>
               <Button className="me-2 btn-dark moodBtn">No</Button>
@@ -102,6 +105,7 @@ const MoodModal = (props) => {
           {/* Lifestyle  */}
           <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
             <Form.Label className="fs-4" >Rate the healthiness of your lifestyle today.</Form.Label>
+            <Form.Control name="lifestyle" value={lifestyle} onChange={handleChange}/>
           <div className="mx-auto">
               <Button className="mx-2 btn-dark moodBtn" value="1">Goblin Mode</Button> 
               <Button className="mx-2 btn-dark moodBtn" value="2">Couch Potato</Button> 
@@ -113,6 +117,7 @@ const MoodModal = (props) => {
           {/* Physical  */}
           <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
             <Form.Label className="fs-4" >How does your physical body feel today?</Form.Label>
+            <Form.Control name="physicalHealth" value={physicalHealth} onChange={handleChange}/>
           <div className="mx-auto">
               <Button className="mx-2 btn-dark moodBtn" value="1">Barely Alive</Button> 
               <Button className="mx-2 btn-dark moodBtn" value="2">Pain (tip to taint)</Button> 
@@ -124,6 +129,7 @@ const MoodModal = (props) => {
           {/* Mental  */}
           <Form.Group className="mb-5 text-center" controlId="exampleForm.ControlInput1">
             <Form.Label className="fs-4" >How do you feel today? Rate your mental health?</Form.Label>
+            <Form.Control name="mentalHealth" value={mentalHealth} onChange={handleChange}/>
           <div className="mx-auto">
               <Button className="mx-2 btn-dark moodBtn" value="1">Barely Alive</Button> 
               <Button className="mx-2 btn-dark moodBtn" value="2">Debbie Downer</Button> 
@@ -135,7 +141,7 @@ const MoodModal = (props) => {
           {/* Comments */}
           <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
             <Form.Label className="fs-4">Detail your experience today including highs and/or lows.</Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Control as="textarea" rows={3} name="comment" value={comment} onChange={handleChange}/>
           </Form.Group>
 
           <Button type="submit"
