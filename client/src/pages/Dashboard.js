@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -39,27 +39,21 @@ const Dashboard = () => {
     return <div>Loading...</div>;
   }
 
-  // broken code by s, k, and m
-  // if (!user?.username) {
-  //   return (
-  //     // <h4>
-  //     //   You need to be logged in to see this. Use the navigation links above to
-  //     //   sign up or log in!
-  //     // </h4>
-  //         <Container>
-  //         <Card className="mx-auto" style={{ width: '18rem' }}>
-  //     <Card.Img variant="top" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F254242341451286817%2F&psig=AOvVaw3UGJl2STSkczE0UPq_8mwI&ust=1650428320992000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJigjuCin_cCFQAAAAAdAAAAABAQ" />
-  //       <Card.Body>
-  //           <Card.Title>Card Title</Card.Title>
-  //         <Card.Text>
-  //     You need to be logged in to see this. Use the navigation links above to sign up or log in!
-  //         </Card.Text>
-  //         <Button variant="primary">login</Button>
-  //         </Card.Body>
-  //           </Card>
-  //           </Container>
-  //   );
-  // }
+  
+  if (!user?.username) {
+    return (
+  
+      <Container style={{ width: '25rem', marginTop: "100px" }}>
+          
+      <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Train_wreck_at_Montparnasse_1895.jpg" />
+        <Card.Body>
+           
+        <h1>You need to be logged in to see this!</h1>
+          <Link className="btn btn-outline-dark mt-3" to="/login">login</Link>
+          </Card.Body>
+              </Container>
+    );
+  }
 
 
   
