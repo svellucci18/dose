@@ -1,4 +1,4 @@
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 
@@ -24,6 +24,10 @@ const chartData = {
                 'rgba(153, 102, 255, 1)'
             ],
             borderWidth: 1
+        },
+        {
+            label: "different amount",
+            data: [7, 6, 15, 9, 12],
         }
     ]
 }
@@ -45,6 +49,7 @@ function DataChart () {
                     }
                 }
             }}/>
+
     </div>)
 }
 
