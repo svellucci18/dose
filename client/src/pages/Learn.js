@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-import './learn.css';
+import '../styles/learn.css';
 import {  Container, Nav, Tab, Tabs, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
 
 import orangeFloral from '../assets/images/orangepsychedelicFloral.jpg';

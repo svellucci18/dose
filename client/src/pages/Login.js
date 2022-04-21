@@ -5,7 +5,7 @@ import { LOGIN_USER } from '../utils/mutations';
 import { ADD_USER } from '../utils/mutations';
 import Signup from './Signup.js';
 
-import './login.css';
+import '../styles/login.css';
 import {  Container, Navbar, Offcanvas, Nav, NavDropdown, Form, FormControl, Button, Image, Col, Row  } from "react-bootstrap/";
 
 
