@@ -34,19 +34,11 @@ const NavBar = () => {
 
           <a href="/" id="home" className="whiteText fs-1 text-center py-5 text-decoration-none">home</a>
 
-          {/* <Link id="home" className="whiteText fs-1 text-center py-5 text-decoration-none" to="/">home</Link> */}
-
           <a href="/learn" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</a>
-
-          {/* <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/learn">learn</Link> */}
 
           <a href="/about" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</a>
 
-          {/* <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/about">about</Link> */}
-
           <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-1 text-center pe-2">dashboard</a>
-
-          {/* <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/dashboard">dashboard</Link> */}
 
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
@@ -59,11 +51,6 @@ const NavBar = () => {
                         <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
                           login
                         </a>  
-
-
-                        {/* <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">login</Link> */}
-
-
                       </Col>
 
                       <Col xs={4}>
@@ -75,7 +62,7 @@ const NavBar = () => {
                         <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
                             signup
                           </a>
-                        {/* <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">signup</Link> */}
+
                         </Col></>
 
 
