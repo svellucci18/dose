@@ -2,6 +2,11 @@ import { Bar, Line } from "react-chartjs-2";
 import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 
+// Fetch call to grab information for the user from graphQl API
+// Save mood data into one array
+// Save consumable data into another array
+// Save dates into another array
+
 // data prop for the chart
 const chartData = {
     labels: ["Consumable 1", "Consumable 2", "Consumable 3", "Consumable 4", "Consumable 5"],
