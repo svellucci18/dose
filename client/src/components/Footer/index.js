@@ -1,8 +1,8 @@
 const styles = {
   footerStyle:{
-    position: "fixed",
-  left: 0,
-  bottom: 0,
+    position: "relative",
+
+  marginTop: "100px",
 color: "white"}
 }
 

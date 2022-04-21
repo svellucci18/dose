@@ -3,16 +3,15 @@ import DoseModal from "../components/DoseModal";
 import MoodModal from "../components/MoodModal";
 import { useState } from "react";
 import useDate from "../utils/useDate";
-import Auth from '../utils/auth';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
-
-
+import Auth from "../utils/auth";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
+import angryT from "../assets/images/angryThomas2.png";
 
 // import css
-import '../styles/dashboard.css';
+import "../styles/dashboard.css";
 
 import DataChart from "../components/Chart";
 
@@ -22,7 +21,7 @@ const Dashboard = () => {
   const [openMood, setOpenMood] = useState(false);
 
   const { date, time, wish } = useDate();
-  
+
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -39,96 +38,99 @@ const Dashboard = () => {
     return <div>Loading...</div>;
   }
 
-  
   if (!user?.username) {
     return (
-  
-      <Container style={{ width: '25rem', marginTop: "100px" }}>
-          
-      <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Train_wreck_at_Montparnasse_1895.jpg" />
-        <Card.Body>
+      <>
+        <Container>
+          <Row className="text-center mt-5">
+            <h1>You need to be logged in to see this!</h1>
+          </Row>
+
+          <Row>
+            <Card.Img
+              variant="top"
+              src={angryT}
+              style={{ height: "20rem", width: "40rem" }}
+              className="mx-auto "
+            />
+          </Row>
+          <Card.Body>
+        
            
-        <h1>You need to be logged in to see this!</h1>
-          <Link className="btn btn-outline-dark mt-3" to="/login">login</Link>
           </Card.Body>
-              </Container>
+
+          <div className="d-flex justify-content-center"> 
+            <Link
+                className="btn btn-lg btn-outline-dark " to="/login">
+                login
+              </Link>
+              </div>
+               
+
+        </Container>
+      </>
     );
   }
 
-
-  
-  
-
   return (
-
-
-  
     <>
-
-
-     <div className="rainbowMiniHeader d-flex justify-content-between align-items-center">
+      <div className="rainbowMiniHeader d-flex justify-content-between align-items-center">
         <div className="arrow">
-            <h4 className="pb-4 pt-4">  {wish} [username] -- {time} {date}</h4>
+          <h4 className="pb-4 pt-4">
+            {" "}
+            {wish} [username] -- {time} {date}
+          </h4>
         </div>
       </div>
 
-    <Container>
-
-      <Row className="mt-5 ">
-
-        <Col xs={6} className="d-flex align-items-center justify-content-center">
-          <Button
-           className="p-3 fs-2"
-            variant="dark"
-            size="lg"
-            onClick={() => {
-              setOpenModal(true);
-            }}
+      <Container>
+        <Row className="mt-5 ">
+          <Col
+            xs={6}
+            className="d-flex align-items-center justify-content-center"
           >
-            Track new dose
+            <Button
+              className="p-3 fs-2"
+              variant="dark"
+              size="lg"
+              onClick={() => {
+                setOpenModal(true);
+              }}
+            >
+              Track new dose
+            </Button>
+            <DoseModal show={openModal} onHide={() => setOpenModal(false)} />
+          </Col>
 
-             
-          </Button>
- <DoseModal show={openModal} onHide={() => setOpenModal(false)} />
-        
-
-        </Col>
-
-        <Col xs={6} className="d-flex align-items-center justify-content-center">
-          <Button
-            className="p-3 fs-2"
-            variant="dark"
-            size="lg"
-            onClick={() => {
-              setOpenMood(true);
-            }}
+          <Col
+            xs={6}
+            className="d-flex align-items-center justify-content-center"
           >
-            Track new mood
-          </Button>
+            <Button
+              className="p-3 fs-2"
+              variant="dark"
+              size="lg"
+              onClick={() => {
+                setOpenMood(true);
+              }}
+            >
+              Track new mood
+            </Button>
 
-          <MoodModal show={openMood}
-        onHide={() => setOpenMood(false)}/> 
+            <MoodModal show={openMood} onHide={() => setOpenMood(false)} />
+          </Col>
+        </Row>
+      </Container>
 
-        </Col>
+      <Container>
+        <Row>
+          <Col>{/* list of user drugs */}</Col>
+        </Row>
+      </Container>
 
-      </Row>
-    </Container>
-    
-
-    <Container>
-      <Row>
-
-        <Col>
-        {/* list of user drugs */}
-        </Col>
-
-      </Row>
-    </Container>
-
-    <div>
-      <DataChart />
-    </div>
-
+      <div>
+        <DataChart />
+      </div>
     </>
   );
 };
