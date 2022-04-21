@@ -84,6 +84,18 @@ body {
 }
 
 
-.disclaimerText{
-  font-size: 0.7rem;
+.disclaimerText {
+  font-size: 1.2rem;
+}
+
+.doseFooter {
+  font-size: 3.2rem;
+}
+
+.githubFooter {
+  font-size: 1.7rem;
+}
+
+.githubFooter:hover {
+  color: var(--graphColorOne);
 }
