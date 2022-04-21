@@ -72,7 +72,7 @@ const Learn = () => {
                         </Tab.Pane>
 
                         <Tab.Pane eventKey="second">
-                            TEST TWO
+                            Do your <a href="https://pubmed.ncbi.nlm.nih.gov/30925850/">research</a> before making the decision to attempt microdosing. Some people shouldn't microdose. People with a history of schizophrenia, bi-polar disorder, and some other mental illnesses are recommended to avoid the use of psychedelics. 
                         </Tab.Pane>
 
                         <Tab.Pane eventKey="first">
