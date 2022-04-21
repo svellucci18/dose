@@ -1,5 +1,5 @@
 .rainbowMiniHeader {
-    height: 5vh;
+    height: 10vh;
     background: url(../assets/images/rainbowHeader.png);
     margin-bottom: 8rem;
 }
@@ -29,4 +29,13 @@
     100% {
       transform: translateX(100vw);
     }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .rainbowMiniHeader {
+      height: 20vh;
+
+    }
+
+
   }
