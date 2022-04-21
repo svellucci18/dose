@@ -1,0 +1,24 @@
+.rainbowAboutHeader {
+    height: 18rem;
+    background: url(../assets/images/rainbowHeader.png);
+    margin-bottom: 8rem;
+}
+
+.aboutHeading {
+    font-size: 5rem;
+}
+
+
+.topBorder {
+    border-top: var(--secondaryColor) 2px dotted;
+    margin-bottom: 150px;
+}
+
+.carouselStyle {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.LoImage {
+    height: 260px;
+    width: 260px;
+}

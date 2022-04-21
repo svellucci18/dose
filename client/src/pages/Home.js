@@ -33,7 +33,7 @@ const Home = () => {
             <Carousel.Item interval={5000}>
               <img className="d-block " src={enlightend} alt="Third slide" />
 
-              <Carousel.Caption>
+              <Carousel.Caption >
                 <h3>Record daily</h3>
                 <p>
                 Turn self-care into a habit
