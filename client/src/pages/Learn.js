@@ -17,11 +17,11 @@ const Learn = () => {
 
             <Container className="headerContainer">
                 <Row className="mb-5">
-                    <Col xs={5} md={8}>
-                        <img src={orangeFloral} alt="orange floral psychedlic art" className="orangeFloralImage" />
+                    <Col>
+                        <img src={orangeFloral} alt="orange floral psychedlic art" className="orangeFloralImage img-fluid" />
                     </Col>
 
-                    <Col  xs={5} md={4} className="d-flex align-items-center justify-content-end ">
+                    <Col  className="d-flex align-items-center justify-content-end ">
 
                         <h1 className="">Educational Resources to help you decide if microdosing is for you </h1>
 
