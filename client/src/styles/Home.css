@@ -3,10 +3,36 @@
   height:393px;
   margin-top: 50px;
   margin-bottom: 50px;
-  background-color: black;
+
 }
 
 img{
     height: 100%!important;
 }
 
+
+.text-bg{
+  background-color: rgba(0, 0, 0, 0.5);
+border-radius: 10px;
+  
+}
+
+.dose {
+  background-color: black;
+  color: white;
+  line-height: 2;
+}
+
+.micro {
+  background: linear-gradient(to right, red, orange, yellow, green, pink, indigo, violet, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px;
+}
+
+.microDose {
+  background: linear-gradient(to right, red, orange, yellow, green, teal, pink, red, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
