@@ -23,16 +23,4 @@ border-radius: 10px;
   line-height: 2;
 }
 
-.micro {
-  background: linear-gradient(to right, red, orange, yellow, green, pink, indigo, violet, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 100px;
-}
 
-.microDose {
-  background: linear-gradient(to right, red, orange, yellow, green, teal, pink, red, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-}
