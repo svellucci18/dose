@@ -4,7 +4,7 @@ import gitHubLogo from '../../assets/images/GitHub-Mark-Light-64px.png';
 
 const styles = {
   footerStyle:{
-    position:"absolute",
+    position:"relative",
     left:0,
     bottom:0,
     right:0,

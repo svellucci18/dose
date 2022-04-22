@@ -71,6 +71,21 @@ body {
   color: #a6c0c2;
 }
 
+.mushroomImgLogout {
+  height: 170px;
+  width: 170px;
+}
+
+.logoutButton {
+  background: linear-gradient(to left top, #f3e284, #e4f3a8) ;
+  border-radius: 27px;
+  color: var(--secondaryColor);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+}
+
+
 .loginContainer {
   position: absolute;
   bottom: 10px;
