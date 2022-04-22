@@ -35,7 +35,9 @@ const Home = () => {
             <Carousel.Item interval={5000}>
               <img className="d-block img-fluid" src={enlightend} alt="man standing at edge of dock on a lake" />
 
+
               <Carousel.Caption className="text-bg">
+
                 <h3>Record daily</h3>
                 <p>
                 Turn self-care into a habit

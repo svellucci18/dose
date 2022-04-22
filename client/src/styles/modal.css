@@ -1,5 +1,5 @@
 .submitBtn {
-    background: linear-gradient(to left top, #e6b9b6, #ffd9ad) ;
+    background: linear-gradient(to left top, #f08d7c, #f7c274) ;
     border-radius: 27px;
     color: var(--secondaryColor);
     border: none;
@@ -9,7 +9,7 @@
 }
 
 .cancelBtn {
-    background: linear-gradient(to left top, #cae9e5, #e7f0c3) ;
+    background: linear-gradient(to left top, #bbe2dd, #e5f5a5) ;
     border-radius: 27px;
     color: var(--secondaryColor);
     border: none;
@@ -19,5 +19,40 @@
 }
 
 .moodBtn {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    margin-top: .6rem;
+    border-radius: 22px;
+}
+
+/* .moodBtn:hover {
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+} */
+
+.trialDropdown {
+    font-size: 1.2rem;
+    margin-top: .6rem;
+    border-radius: 22px;
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+}
+
+.trialDropdown:hover {
+    background: linear-gradient(to left top, #f3e284, #e4f3a8) ;
+    color: var(--secondaryColor);
+}
+
+.lowScoreHover:hover {
+    background: linear-gradient(to left top, #f08d7c, #f7c274) ;
+    color: var(--secondaryColor);
+}
+
+.positiveScoreHover:hover {
+    background: linear-gradient(to left top, #f3e284, #e4f3a8 );
+    color: var(--secondaryColor);
+}
+
+.avgScoreHover:hover {
+    background: linear-gradient(to left top, #bbe2dd, #e5f5a5) ;
+    color: var(--secondaryColor);
 }
