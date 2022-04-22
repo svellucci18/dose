@@ -42,32 +42,58 @@ const NavBar = () => {
 
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
-            <Row >
+            
               {Auth.loggedIn() ? (
-                <Button className= "fs-5 text-decoration-none whiteText align-content-start loginButton" onClick={logout}>logout</Button>
+                <>
+                <Row className="d-flex justify-content-center mb-4">
+                <Image src={mushroom} className="mushroomImgLogout " alt="mushroom" />                
+                </Row>
+
+                <Row>
+                <Button className= "fs-5 logoutButton" onClick={logout}>logout</Button>
+
+                </Row>
+                </>
                       ) : (
-                        <><Col xs={4}>
+                        <>
+                         <Row className="d-flex justify-content-center mb-4">
+                        <Image src={mushroom} className="mushroomImgLogout " alt="mushroom" />                
+                        </Row>
 
-                        <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
-                          login
-                        </a>  
-                      </Col>
+                        <Row>
+                        <a href="/login" className="btn  btn-lg btn-block loginButton mt-4">
+                            login / signup
+                          </a> 
 
-                      <Col xs={4}>
+                        </Row>
 
-                          <img src={mushroom} width="60" height="60" alt="mushroom" />
 
-                        </Col><Col xs={4}>
+                         {/* <Row >
+                          <Col xs={4}>
 
-                        <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
-                            signup
-                          </a>
+                          <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
+                            login
+                          </a>  
+                        </Col>
 
-                        </Col></>
+                        <Col xs={4}>
+
+                            <img src={mushroom} width="80" height="80" alt="mushroom" />
+
+                          </Col><Col xs={4}>
+
+                          <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
+                              signup
+                            </a>
+
+                          </Col>
+                          </Row> */}
+
+                        </>
 
 
                       ) }
-            </Row>
+            
           </Container>
           </div>
         
