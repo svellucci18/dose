@@ -21,12 +21,10 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_CONSUMABLES = gql`
-  query getThoughts {
-    thoughts {
+  query getConsumables {
+    consumables {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      name
     }
   }
 `;
