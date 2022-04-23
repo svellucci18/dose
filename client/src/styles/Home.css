@@ -9,6 +9,12 @@ img{
     height: 100%!important;
 }
 
+.microDose{
+font-size: 100px;
+  background: linear-gradient(to right, rgb(243, 98, 98), pink, rgb(230, 230, 130), rgb(240, 196, 114));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .text-bg{
   background-color: rgba(0, 0, 0, 0.5);
@@ -22,4 +28,14 @@ border-radius: 10px;
   line-height: 2;
 }
 
+@media only screen and (max-width: 675px) {
+  .microDose {
+   font-size: 50px;
+  }
+}
 
+@media only screen and (max-width: 1291px) {
+  .microDose {
+   font-size: 50px;
+  }
+}
