@@ -100,7 +100,7 @@ const MoodModal = (props) => {
                 <Dropdown.Menu variant="dark">
                   {/* loop through the list and print the name */}
                   {data.me.consumables.map((item) => (
-                  <Dropdown.Item value={item._id}>
+                  <Dropdown.Item key={item._id} value={item._id}>
                     {item.name}
                   </Dropdown.Item>
                   ))}
