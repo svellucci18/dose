@@ -1,4 +1,4 @@
-import { Carousel, Card, Container, Row, Col } from "react-bootstrap/";
+import { Carousel, Card, Container, Row, Col, Image } from "react-bootstrap/";
 import carousel1 from "../assets/images/dopeDose.png";
 import enlightend from "../assets/images/lakeguy.png";
 import meditate from "../assets/images/happyhiker1.jpg";
@@ -12,11 +12,11 @@ const Home = () => {
 
     <Container fluid data-aos='fade-left'  data-aos-duration='900'>
       <Row className="text-center">
-        <Col>
+        <Col xs={12} lg={6}>
          
-          <Carousel>
+          <Carousel >
             <Carousel.Item interval={5000}>
-              <img className="d-block img-fluid"  src={carousel1} alt="girl smiling in nature" />
+              <Image className="d-block img-fluid"  src={carousel1} alt="girl smiling in nature" />
               <Carousel.Caption className="text-bg">
                 <h3>Microdosing</h3>
                 <p>
@@ -25,7 +25,7 @@ const Home = () => {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item interval={5000}>
-              <img className="d-block img-fluid" src={meditate} alt="Sman meditating in field" />
+              <Image className="d-block img-fluid" src={meditate} alt="Sman meditating in field" />
 
               <Carousel.Caption className="text-bg">
                 <h3>Isolate a variable</h3>
@@ -33,7 +33,7 @@ const Home = () => {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item interval={5000}>
-              <img className="d-block img-fluid" src={enlightend} alt="man standing at edge of dock on a lake" />
+              <Image className="d-block img-fluid" src={enlightend} alt="man standing at edge of dock on a lake" />
 
 
               <Carousel.Caption className="text-bg">
@@ -50,7 +50,7 @@ const Home = () => {
         {/* carousel end */}
 
         
-        <Col m={12}>
+        <Col lg={6}>
         <Card className="mt-5 mx-auto dose" style={{height: '393px'}}>
           <Card.Body>
             <h1 className="text-center">Welcome to dose.</h1> Microdosing psychedelics is the practice of consuming very low, 
