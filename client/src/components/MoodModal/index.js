@@ -13,13 +13,14 @@ const MoodModal = (props) => {
   const [physicalHealth, setPhysicalHealthState] = useState('');
   const [mentalHealth, setMentalHealthState] = useState('');
   const [comment, setCommentState] = useState('');
-  // const [consumables, setConsumableState] = useState('');
+  const [consumableId, setConsumableState] = useState('');
   console.log(dosed);
   console.log(depressants);
   console.log(lifestyle);
   console.log(physicalHealth);
   console.log(mentalHealth);
   console.log(comment);
+  console.log(consumableId);
 
 
   const [addMood] = useMutation(ADD_MOOD);
@@ -37,6 +38,7 @@ const MoodModal = (props) => {
         physicalHealth,
         mentalHealth,
         comment,
+        consumableId,
       },
     });
     // console.log(data)
@@ -72,11 +74,17 @@ const MoodModal = (props) => {
       if (name === 'comment') {
         setCommentState(value);
       };
-  
+      if (name === 'comment') {
+        setCommentState(value);
+      };
+      if (name === 'consumableId') {
+        setConsumableState(value);
+      };
     };
 
     //query the database of consumables so that we can print it in the dropdown menu
     const { data, loading } = useQuery(QUERY_ME);
+    console.log(data);
 
   return (
     <Modal
@@ -106,12 +114,12 @@ const MoodModal = (props) => {
 
                 <Dropdown.Menu variant="dark">
                   {/* loop through the list and print the name */}
-                  {data.me.consumables.map((item) => (
-                  <Dropdown.Item key={item._id} value={item._id}>
-                    {item.name}
+                  {data.me.consumables.map((data) => (
+                  <Dropdown.Item key={data._id} name={"consumableId"} value={data._id} onSelect={handleChange} >
+                    {data.name} 
                   </Dropdown.Item>
                   ))}
-                  {/* {console.log(data.me)} */}
+                  
                 </Dropdown.Menu>
 
 
