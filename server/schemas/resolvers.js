@@ -19,9 +19,7 @@ const resolvers = {
     consumables: async () => {
       return Consumable.find();
     },
-    // moods: async () => {
-    //   return Mood.find();
-    // },
+    // NOTE that in order to access the mood data for the charts we need to add a query that populates the moods based on the consumables
 
   },
 
@@ -76,6 +74,7 @@ const resolvers = {
         return await Consumable.findByIdAndUpdate(context.consumable._id, args, {new: true});
       }
     },
+    // LOOK AT THIS addMood!
     addMood: async (parent, { consumableId, dosed }, context) => {
       if (context.user) {
         return Consumable.findOneAndUpdate(

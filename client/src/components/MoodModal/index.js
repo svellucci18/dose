@@ -14,15 +14,22 @@ const MoodModal = (props) => {
   const [mentalHealth, setMentalHealthState] = useState('');
   const [comment, setCommentState] = useState('');
   // const [consumables, setConsumableState] = useState('');
+  console.log(dosed);
+  console.log(depressants);
+  console.log(lifestyle);
+  console.log(physicalHealth);
+  console.log(mentalHealth);
+  console.log(comment);
 
-  const [addConsumable] = useMutation(ADD_MOOD);
+
+  const [addMood] = useMutation(ADD_MOOD);
   
    // for submitting the form and pushing the data to the database
    const handleFormSubmit =  async (event) => {
     event.preventDefault();
-    console.log(dosed);
+    // console.log(dosed);
 
-    const {data} = await addConsumable({
+    const {data} = await addMood({
       variables: {
         dosed,
         depressants,
@@ -32,7 +39,7 @@ const MoodModal = (props) => {
         comment,
       },
     });
-    console.log(data)
+    // console.log(data)
     setDosedState('');
     setDepressantsState('');
     setLifestyleState('');
@@ -104,7 +111,7 @@ const MoodModal = (props) => {
                     {item.name}
                   </Dropdown.Item>
                   ))}
-                  {console.log(data.me)}
+                  {/* {console.log(data.me)} */}
                 </Dropdown.Menu>
 
 
@@ -118,8 +125,8 @@ const MoodModal = (props) => {
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >Did you dose?</Form.Label>
             <div className="mx-auto">  
-              <Button name="dosed" value='true' onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
-              <Button name="dosed" value='false' onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
+              <Button name="dosed" value={true} onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
+              <Button name="dosed" value={false} onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
             </div>
           </Form.Group>
 
