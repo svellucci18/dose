@@ -3,7 +3,7 @@ import {  Container, Navbar, Offcanvas, Nav, NavDropdown, Form, FormControl, But
 
 import Auth from '../../utils/auth';
 
-import { Link } from 'react-router-dom';
+
  
 
 // import images
@@ -34,53 +34,66 @@ const NavBar = () => {
 
           <a href="/" id="home" className="whiteText fs-1 text-center py-5 text-decoration-none">home</a>
 
-          {/* <Link id="home" className="whiteText fs-1 text-center py-5 text-decoration-none" to="/">home</Link> */}
-
           <a href="/learn" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</a>
-
-          {/* <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/learn">learn</Link> */}
 
           <a href="/about" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</a>
 
-          {/* <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/about">about</Link> */}
-
           <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-1 text-center pe-2">dashboard</a>
-
-          {/* <Link id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2" to="/dashboard">dashboard</Link> */}
 
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
-            <Row >
+            
               {Auth.loggedIn() ? (
-                <Button className= "fs-5 text-decoration-none whiteText align-content-start loginButton" onClick={logout}>logout</Button>
+                <>
+                <Row className="d-flex justify-content-center mb-4">
+                <Image src={mushroom} className="mushroomImgLogout " alt="mushroom" />                
+                </Row>
+
+                <Row>
+                <Button className= "fs-5 logoutButton" onClick={logout}>logout</Button>
+
+                </Row>
+                </>
                       ) : (
-                        <><Col xs={4}>
+                        <>
+                         <Row className="d-flex justify-content-center mb-4">
+                        <Image src={mushroom} className="mushroomImgLogout " alt="mushroom" />                
+                        </Row>
 
-                        <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
-                          login
-                        </a>  
+                        <Row>
+                        <a href="/login" className="btn  btn-lg btn-block loginButton mt-4">
+                            login / signup
+                          </a> 
+
+                        </Row>
 
 
-                        {/* <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">login</Link> */}
+                         {/* <Row >
+                          <Col xs={4}>
 
+                          <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
+                            login
+                          </a>  
+                        </Col>
 
-                      </Col>
+                        <Col xs={4}>
 
-                      <Col xs={4}>
+                            <img src={mushroom} width="80" height="80" alt="mushroom" />
 
-                          <img src={mushroom} width="60" height="60" alt="mushroom" />
+                          </Col><Col xs={4}>
 
-                        </Col><Col xs={4}>
+                          <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
+                              signup
+                            </a>
 
-                        <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
-                            signup
-                          </a>
-                        {/* <Link className= "fs-5 text-decoration-none whiteText align-content-start loginLink" to="/login">signup</Link> */}
-                        </Col></>
+                          </Col>
+                          </Row> */}
+
+                        </>
 
 
                       ) }
-            </Row>
+            
           </Container>
           </div>
         
