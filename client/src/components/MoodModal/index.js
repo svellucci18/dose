@@ -1,9 +1,9 @@
 // import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Button, Modal, Dropdown } from "react-bootstrap/";
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_MOOD } from '../../utils/mutations';
-import { QUERY_CONSUMABLES } from "../../utils/queries";
+import { QUERY_ME } from "../../utils/queries";
 import '../../styles/modal.css';
 
 const MoodModal = (props) => {
@@ -13,7 +13,7 @@ const MoodModal = (props) => {
   const [physicalHealth, setPhysicalHealthState] = useState('');
   const [mentalHealth, setMentalHealthState] = useState('');
   const [comment, setCommentState] = useState('');
-  const [consumables, setConsumableState] = useState('');
+  // const [consumables, setConsumableState] = useState('');
 
   const [addConsumable] = useMutation(ADD_MOOD);
   
@@ -69,13 +69,7 @@ const MoodModal = (props) => {
     };
 
     //query the database of consumables so that we can print it in the dropdown menu
-    const consumablesList = useQuery(QUERY_CONSUMABLES);
-
-    function getConsumablesList() {
-
-    console.log(consumablesList);
-    return consumablesList
-    };
+    const { data, loading } = useQuery(QUERY_ME);
 
   return (
     <Modal
@@ -105,12 +99,12 @@ const MoodModal = (props) => {
 
                 <Dropdown.Menu variant="dark">
                   {/* loop through the list and print the name */}
-                  {/* {consumablesList.data.consumables.map((item) => (
+                  {data.me.consumables.map((item) => (
                   <Dropdown.Item value={item._id}>
                     {item.name}
                   </Dropdown.Item>
-                  ))} */}
-                  {console.log(getConsumablesList())}
+                  ))}
+                  {console.log(data.me)}
                 </Dropdown.Menu>
 
 
