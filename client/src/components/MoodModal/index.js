@@ -55,19 +55,19 @@ const MoodModal = (props) => {
       const { name, value } = event.target;
       console.log(name, value);
       if (name === 'dosed') {
-        setDosedState(value);
+        setDosedState(value === 'true');
       }
       if (name === 'depressants') {
-        setDepressantsState(value);
+        setDepressantsState(value === 'true');
       } 
       if (name === 'lifestyle') {
-        setLifestyleState(value);
+        setLifestyleState(parseInt(value));
       };  
       if (name === 'physicalHealth') {
-        setPhysicalHealthState(value);
+        setPhysicalHealthState(parseInt(value));
       }
       if (name === 'mentalHealth') {
-        setMentalHealthState(value);
+        setMentalHealthState(parseInt(value));
       } 
       if (name === 'comment') {
         setCommentState(value);
@@ -135,8 +135,8 @@ const MoodModal = (props) => {
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >Did you take any depressants today (ie alcohol/medications)?</Form.Label>
             <div className="mx-auto">  
-              <Button name="depressants" value='true' onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
-              <Button name="depressants" value='false' onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
+              <Button name="depressants" value={true} onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
+              <Button name="depressants" value={false} onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
             </div>
           </Form.Group> 
 
@@ -145,33 +145,33 @@ const MoodModal = (props) => {
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >Rate the healthiness of your lifestyle today.</Form.Label>
           <div className="mx-auto">
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="1">Goblin Mode</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="2">Couch Potato</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value="3">Average</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="4">Trying</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="5">Healthy Bitch</Button>
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={1}>Goblin Mode</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={2}>Couch Potato</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value={3}>Average</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={4}>Trying</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={5}>Healthy Bitch</Button>
           </div>
           </Form.Group>
           {/* Physical  */}
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >How does your physical body feel today?</Form.Label>
           <div className="mx-auto">
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="1">Barely Alive</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="2">Pain (tip to taint)</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value="3">Average</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="4">Pissing Excellence</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="5">Strong AF</Button>
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={1}>Barely Alive</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={2}>Pain (tip to taint)</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value={3}>Average</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={4}>Pissing Excellence</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={5}>Strong AF</Button>
           </div>
           </Form.Group>
           {/* Mental  */}
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >How do you feel today? Rate your mental health?</Form.Label>
           <div className="mx-auto">
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="1">Barely Alive</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="2">Debbie Downer</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value="3">Average</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="4">Elated Eleanor</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="5">High AF</Button>
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={1}>Barely Alive</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={2}>Debbie Downer</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value={3}>Average</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={4}>Elated Eleanor</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={5}>High AF</Button>
           </div>
           </Form.Group>
 
