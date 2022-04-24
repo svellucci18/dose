@@ -70,6 +70,29 @@ function DataChart () {
                         display: true,
                         position: "top"
                     }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Date",
+                            font: {
+                                size: 24
+                            }
+                        } 
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Mood",
+                            font: {
+                                size: 24
+                            }
+                        } 
+                    }
+                },
+                layout: {
+                    padding: 20
                 }
             }}/>
 
