@@ -53,8 +53,8 @@ const Home = () => {
         <Col lg={6}>
         <Card className="mt-5 mx-auto dose" style={{height: '393px'}}>
           <Card.Body>
-            <h1 className="text-center">Welcome to dose.</h1> Microdosing psychedelics is the practice of consuming very low, 
-            sub-hallucinogenic doses of a psychedelic substance, such as lysergic acid diethylamide (LSD) or psilocybin-containing mushrooms. Microdosing has seen a rapid explosion of popularity in recent years. Individuals who microdose report minimal acute effects from these substances yet claim a range of long-term general health and wellbeing benefits. With Dose you can track your own experience with microdosing and the effects it has had on your health!
+            <h1 className="text-center microDose">Mircodosing.</h1> <p className="mt-5">Microdosing psychedelics is the practice of consuming very low, 
+            sub-hallucinogenic doses of a psychedelic substance, such as lysergic acid diethylamide (LSD) or psilocybin-containing mushrooms. Microdosing has seen a rapid explosion of popularity in recent years. Individuals who microdose report minimal acute effects from these substances yet claim a range of long-term general health and wellbeing benefits. With Dose you can track your own experience with microdosing and the effects it has had on your health!</p>
             
             </Card.Body>
         </Card>
