@@ -16,6 +16,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      consumables {
+        _id
+        name
+      }
     }
   }
 `;

@@ -77,8 +77,8 @@ const Dashboard = () => {
       <div className="rainbowMiniHeader d-flex justify-content-between align-items-center">
         <div className="arrow">
           <h4 className="pb-4 pt-4">
-            {" "}
-            {wish} [username] -- {time} {date}
+            
+            {wish} {Auth.getProfile().data.username}  -- {time} {date}
           </h4>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Carousel, Card, Container, Row, Col } from "react-bootstrap/";
+import { Carousel, Card, Container, Row, Col, Image } from "react-bootstrap/";
 import carousel1 from "../assets/images/dopeDose.png";
 import enlightend from "../assets/images/lakeguy.png";
 import meditate from "../assets/images/happyhiker1.jpg";
@@ -13,6 +13,7 @@ const Home = () => {
   return (
 <>
 
+
     <Container >
       <Row className="my-5">
 
@@ -22,6 +23,7 @@ const Home = () => {
 
             <Carousel.Item interval={5000}>
               <img className="d-block img-fluid"  src={mushroomvariety} alt="different types of mushrooms" />
+
               <Carousel.Caption className="text-bg">
                 <h3>Microdosing</h3>
                 <p>
@@ -33,6 +35,7 @@ const Home = () => {
 
             <Carousel.Item interval={5000}>
               <img className="d-block img-fluid" src={focusflora} alt="flower bush"  />
+
 
               <Carousel.Caption className="text-bg">
                 <h3>Isolate a variable</h3>
@@ -60,7 +63,7 @@ const Home = () => {
 
         {/* carousel end */}
 
-        
+
         <Col sm={5} md={4} className="col-xs-push-12 mx-auto d-flex align-items-center justify-content-end  homeHeader">
         <Card className="mt-5 mx-auto headerCard" >
           <Card.Body className="text-center cardBody">
