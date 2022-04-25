@@ -1,10 +1,4 @@
-.carousel {
-    width:700px;
-  height:393px;
-  margin-top: 50px;
-  margin-bottom: 50px;
 
-}
 
 img{
     height: 100%!important;
@@ -18,9 +12,36 @@ border-radius: 10px;
 }
 
 .dose {
-  background-color: black;
-  color: white;
+  color: black;
   line-height: 2;
+  border:black 2px dotted;
+  width: 70vw;
+  font-size: 14px;
 }
 
+.headerCard {
+  background: none;
+  border: none;
+}
+
+.homeHeader {
+  background: radial-gradient(50% 50% at 50% 50%, #EF8693 48.96%, rgba(196, 196, 196, 0) 100%);
+
+}
+
+.cardBody {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 991px) { 
+  .cardBody {
+    font-size: 20px;
+  }
+ }
+
+@media screen and (max-width: 767.98px) { 
+  .cardBody {
+    font-size: 15px;
+  }
+ }
 
