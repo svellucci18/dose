@@ -14,21 +14,12 @@ const MoodModal = (props) => {
   const [mentalHealth, setMentalHealthState] = useState('');
   const [comment, setCommentState] = useState('');
   const [consumableId, setConsumableState] = useState('');
-  console.log(dosed);
-  console.log(depressants);
-  console.log(lifestyle);
-  console.log(physicalHealth);
-  console.log(mentalHealth);
-  console.log(comment);
-  console.log(consumableId);
-
 
   const [addMood] = useMutation(ADD_MOOD);
   
    // for submitting the form and pushing the data to the database
    const handleFormSubmit =  async (event) => {
     event.preventDefault();
-    // console.log(dosed);
 
     const {data} = await addMood({
       variables: {
@@ -49,42 +40,66 @@ const MoodModal = (props) => {
     setMentalHealthState('');
     setCommentState('');
 
-    console.log("mood added");
+    document.location.reload();
+    // console.log("mood added");
   };
 
     //for filling out the form with user input typing
     const handleChange = (event) => {
       const { name, value } = event.target;
-      console.log(name, value);
+      // console.log(name, value);
+      // if (name === 'consumableId') {
+      //   setConsumableState(value);
+      // };
       if (name === 'dosed') {
+        console.log(value);
         setDosedState(value === 'true');
+        // if (value == "true") {
+        // setDosedState(true)
+        // } else {
+        //   setDosedState(false)
+        // };
+        const variable = document.getElementById("selectId");
+        console.log(variable.value);
+        setConsumableState(variable.value);
+        console.log(dosed);
       }
       if (name === 'depressants') {
+        console.log(value);
         setDepressantsState(value === 'true');
+        // if (value == "true") {
+        //   setDepressantsState(true)
+        //   } else {
+        //     setDepressantsState(false)
+        //   };
+        console.log(depressants);
       } 
       if (name === 'lifestyle') {
-        setLifestyleState(parseInt(value));
+        console.log(value);
+        setLifestyleState((value));
+        console.log(lifestyle);
       };  
       if (name === 'physicalHealth') {
+        console.log(value);
         setPhysicalHealthState(parseInt(value));
+        console.log(physicalHealth);
       }
       if (name === 'mentalHealth') {
+        console.log(value);
         setMentalHealthState(parseInt(value));
+        console.log(mentalHealth);
       } 
       if (name === 'comment') {
+        console.log(value);
         setCommentState(value);
+        console.log(comment);
       };
-      if (name === 'comment') {
-        setCommentState(value);
-      };
-      if (name === 'consumableId') {
-        setConsumableState(value);
-      };
+
     };
 
     //query the database of consumables so that we can print it in the dropdown menu
     const { data, loading } = useQuery(QUERY_ME);
-    console.log(data);
+    // console.log(data);
 
   return (
     <Modal
@@ -105,27 +120,35 @@ const MoodModal = (props) => {
 
           {/* PUT DROPDOWN */}      
           <Form.Group className="mb-5 text-center fs-5">
-            <Form.Label>
+          
               {/* What dosing trial is this mood associated with? */}
-              <Dropdown>
+              {/* <Dropdown>
                 <Dropdown.Toggle  className="text-wrap trialDropdown" variant="black">
                   Select Dosing Trial
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu variant="dark">
-                  {/* loop through the list and print the name */}
+               
                   {data.me.consumables.map((data) => (
-                  <Dropdown.Item key={data._id} name={"consumableId"} value={data._id} onSelect={handleChange} >
+                  <Dropdown.Item key={data._id} name={"consumableId"} value={data._id}>
                     {data.name} 
                   </Dropdown.Item>
                   ))}
-                  
                 </Dropdown.Menu>
+              </Dropdown> */}
 
+              <Form.Label >Select Dosing Trial</Form.Label>
+              <br></br>
+              <select id="selectId">
+                <option value="na">n/a</option>
+              {data.me.consumables.map((data) => (
+                  <option key={data._id} name={"consumableId"} value={data._id}>
+                    {data.name} 
+                  </option>
+                  ))}
+              </select> 
 
-              </Dropdown>
-
-            </Form.Label>
+            
           </Form.Group>
 
 
