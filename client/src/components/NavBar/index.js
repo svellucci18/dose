@@ -32,20 +32,20 @@ const NavBar = () => {
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3  ">
 
-          <a href="/" id="home" className="whiteText fs-1 text-center py-5 text-decoration-none">home</a>
+          <a href="/" id="home" className="whiteText fs-3 text-center py-5 text-decoration-none">home</a>
 
-          <a href="/learn" id="learn" className="whiteText text-decoration-none fs-1 text-center pe-2">learn</a>
+          <a href="/learn" id="learn" className="whiteText text-decoration-none fs-3 text-center pe-2">learn</a>
 
-          <a href="/about" id="about" className="whiteText text-decoration-none fs-1 text-center pe-2">about</a>
+          <a href="/about" id="about" className="whiteText text-decoration-none fs-3 text-center pe-2">about</a>
 
-          <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-1 text-center pe-2">dashboard</a>
+          <a href="/dashboard" id="dashboard" className="whiteText text-decoration-none fs-3 text-center pe-2">dashboard</a>
 
           <div className=" ">
           <Container className="mx-auto pb-2 loginContainer" >
             
               {Auth.loggedIn() ? (
                 <>
-                <Row className="d-flex justify-content-center mb-4">
+                <Row className="d-flex justify-content-center">
                 <Image src={mushroom} className="mushroomImgLogout " alt="mushroom" />                
                 </Row>
 
@@ -61,33 +61,12 @@ const NavBar = () => {
                         </Row>
 
                         <Row>
-                        <a href="/login" className="btn  btn-lg btn-block loginButton mt-4">
+                        <a href="/login" className="btn loginButton ">
                             login / signup
                           </a> 
 
                         </Row>
 
-
-                         {/* <Row >
-                          <Col xs={4}>
-
-                          <a href="/login" className="fs-5 text-decoration-none whiteText align-content-start loginLink ">
-                            login
-                          </a>  
-                        </Col>
-
-                        <Col xs={4}>
-
-                            <img src={mushroom} width="80" height="80" alt="mushroom" />
-
-                          </Col><Col xs={4}>
-
-                          <a href="/login" className="fs-5 text-decoration-none whiteText align-content-end loginLink">
-                              signup
-                            </a>
-
-                          </Col>
-                          </Row> */}
 
                         </>
 

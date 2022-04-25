@@ -1,11 +1,11 @@
 .rainbowAboutHeader {
-    height: 18rem;
+    height: 16rem;
     background: url(../assets/images/rainbowHeader.png);
     margin-bottom: 8rem;
 }
 
 .aboutHeading {
-    font-size: 5rem;
+    font-size: 3.2rem;
 }
 
 
@@ -18,7 +18,23 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.LoImage {
-    height: 260px;
-    width: 260px;
+.headshot {
+    height: 220px;
+    width: 220px;
 }
+
+.githublink {
+    color:black;
+}
+
+.linkedinlink {
+    color: black;
+}
+
+.githublink:hover {
+    color: var(--graphColorTwo);
+  }
+
+  .linkedinlink:hover {
+    color: var(--graphColorFive);
+  }
