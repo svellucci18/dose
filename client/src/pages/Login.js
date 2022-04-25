@@ -43,11 +43,7 @@ const Login = (props) => {
       console.error(e);
     }
 
-    // // clear form values
-    // setFormState({
-    //   email: '',
-    //   password: '',
-    // });
+
   };
 
   return (
@@ -59,11 +55,11 @@ const Login = (props) => {
           <Row className="">
 
             <Col xs={6} className="signUpHeader d-flex align-items-center justify-content-center">
-              <h2 className="">New Around Here?</h2>
+              <h3 className="">New Around Here?</h3>
             </Col>
 
             <Col xs={6} className="d-flex align-items-center justify-content-center">
-              <h2 className="text-center">Login to see your Dosing Data</h2> 
+              <h3 className="text-center">Login to see your Dosing Data</h3> 
             </Col>
             
 
@@ -89,7 +85,7 @@ const Login = (props) => {
           {/* LOGIN Form */}
           <Col xs={12} md={6}>           
               <div className="card signuploginCards ">
-                <h2 className="text-center mb-5 signuploginTitle">Login</h2>
+                <h4 className="text-center mb-5 signuploginTitle">Login</h4>
                 <div className="card-body ">
                   {data ? (
                     <p>
@@ -98,7 +94,7 @@ const Login = (props) => {
                     </p>
                   ) : (
                     <form onSubmit={handleFormSubmit} className="text-center">                   
-                      <h4 className="mt-3"> Email Address </h4>
+                      <h5 className="mt-3"> Email Address </h5>
                       <input
                         className="form-input pe-5"
                         placeholder="Your email"
@@ -110,7 +106,7 @@ const Login = (props) => {
                       <br/>
                       <br/>
 
-                      <h4>Username</h4>
+                      <h5>Username</h5>
                       <input
                         className="form-input pe-5"
                         placeholder="Username"
@@ -122,7 +118,7 @@ const Login = (props) => {
                       <br/>
                       <br/>
                           
-                      <h4>Password</h4>
+                      <h5>Password</h5>
                       <input
                         className="form-input pe-5"
                         placeholder="******"
@@ -134,7 +130,7 @@ const Login = (props) => {
                       <br/>
                       <br/>
                       <button
-                        className="btn-lg btn-block loginButton mt-4"
+                        className="btn-lg btn-block loginButton mt-4 fs-6"
                         style={{ cursor: 'pointer' }}
                         type="submit"
                       >

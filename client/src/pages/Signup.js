@@ -43,7 +43,7 @@ const Signup = () => {
     <>
 
           <div className="signuploginCards card mx-auto">
-                <h2 className="text-center mb-5 signuploginTitle">Signup</h2>
+                <h4 className="text-center mb-5 signuploginTitle">Signup</h4>
                 <div className="card-body">
 
                   {data ? (
@@ -54,7 +54,7 @@ const Signup = () => {
                   ) : (
                     <form onSubmit={handleFormSubmit} className="text-center">
                       
-                      <h4 className="mt-3"> Email Address </h4>
+                      <h5 className="mt-3"> Email Address </h5>
                       <input
                         className="form-input pe-5"
                          placeholder="Your email"
@@ -66,7 +66,7 @@ const Signup = () => {
                       <br/>
                       <br/>
 
-                      <h4>Username</h4>
+                      <h5>Username</h5>
                       <input
                         className="form-input pe-5"
                         placeholder="Username"
@@ -77,7 +77,7 @@ const Signup = () => {
                       />
                       <br/>
                       <br/>
-                      <h4>Password</h4>
+                      <h5>Password</h5>
                       <input
                         className="form-input pe-5"
                         placeholder="******"
@@ -90,7 +90,7 @@ const Signup = () => {
                       <br/>
                       <button
 
-                        className="btn-lg btn-block signupButton mt-4"
+                        className="btn-lg btn-block signupButton mt-4 fs-6"
                         style={{ cursor: 'pointer' }}
                         type="submit"
                       >
