@@ -46,7 +46,7 @@ const typeDefs = gql`
     updateUser(consumables: [ID!]): User
     addConsumable(name: String!, dosage: String!, note: String): Consumable
     updateConsumable(moods: [ID!]): Consumable
-    addMood(dosed: Boolean, depressants: Boolean, lifestyle: Int!, physicalHealth: Int!, mentalHealth: Int!, comment: String): Mood
+    addMood(consumableId: ID!, dosed: Boolean!, depressants: Boolean!, lifestyle: Int!, physicalHealth: Int!, mentalHealth: Int!, comment: String): Mood
   }
 `;
 

@@ -13,16 +13,15 @@ const MoodModal = (props) => {
   const [physicalHealth, setPhysicalHealthState] = useState('');
   const [mentalHealth, setMentalHealthState] = useState('');
   const [comment, setCommentState] = useState('');
-  // const [consumables, setConsumableState] = useState('');
+  const [consumableId, setConsumableState] = useState('');
 
-  const [addConsumable] = useMutation(ADD_MOOD);
+  const [addMood] = useMutation(ADD_MOOD);
   
    // for submitting the form and pushing the data to the database
    const handleFormSubmit =  async (event) => {
     event.preventDefault();
-    console.log(dosed);
 
-    const {data} = await addConsumable({
+    const {data} = await addMood({
       variables: {
         dosed,
         depressants,
@@ -30,9 +29,10 @@ const MoodModal = (props) => {
         physicalHealth,
         mentalHealth,
         comment,
+        consumableId,
       },
     });
-    console.log(data)
+    // console.log(data)
     setDosedState('');
     setDepressantsState('');
     setLifestyleState('');
@@ -40,36 +40,66 @@ const MoodModal = (props) => {
     setMentalHealthState('');
     setCommentState('');
 
-    console.log("mood added");
+    document.location.reload();
+    // console.log("mood added");
   };
 
     //for filling out the form with user input typing
     const handleChange = (event) => {
       const { name, value } = event.target;
-      console.log(name, value);
+      // console.log(name, value);
+      // if (name === 'consumableId') {
+      //   setConsumableState(value);
+      // };
       if (name === 'dosed') {
-        setDosedState(value);
+        console.log(value);
+        setDosedState(value === 'true');
+        // if (value == "true") {
+        // setDosedState(true)
+        // } else {
+        //   setDosedState(false)
+        // };
+        const variable = document.getElementById("selectId");
+        console.log(variable.value);
+        setConsumableState(variable.value);
+        console.log(dosed);
       }
       if (name === 'depressants') {
-        setDepressantsState(value);
+        console.log(value);
+        setDepressantsState(value === 'true');
+        // if (value == "true") {
+        //   setDepressantsState(true)
+        //   } else {
+        //     setDepressantsState(false)
+        //   };
+        console.log(depressants);
       } 
       if (name === 'lifestyle') {
-        setLifestyleState(value);
+        console.log(value);
+        setLifestyleState((value));
+        console.log(lifestyle);
       };  
       if (name === 'physicalHealth') {
-        setPhysicalHealthState(value);
+        console.log(value);
+        setPhysicalHealthState(parseInt(value));
+        console.log(physicalHealth);
       }
       if (name === 'mentalHealth') {
-        setMentalHealthState(value);
+        console.log(value);
+        setMentalHealthState(parseInt(value));
+        console.log(mentalHealth);
       } 
       if (name === 'comment') {
+        console.log(value);
         setCommentState(value);
+        console.log(comment);
       };
-  
+
     };
 
     //query the database of consumables so that we can print it in the dropdown menu
     const { data, loading } = useQuery(QUERY_ME);
+    // console.log(data);
 
   return (
     <Modal
@@ -90,27 +120,35 @@ const MoodModal = (props) => {
 
           {/* PUT DROPDOWN */}      
           <Form.Group className="mb-5 text-center fs-5">
-            <Form.Label>
+          
               {/* What dosing trial is this mood associated with? */}
-              <Dropdown>
+              {/* <Dropdown>
                 <Dropdown.Toggle  className="text-wrap trialDropdown" variant="black">
                   Select Dosing Trial
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu variant="dark">
-                  {/* loop through the list and print the name */}
-                  {data.me.consumables.map((item) => (
-                  <Dropdown.Item key={item._id} value={item._id}>
-                    {item.name}
+               
+                  {data.me.consumables.map((data) => (
+                  <Dropdown.Item key={data._id} name={"consumableId"} value={data._id}>
+                    {data.name} 
                   </Dropdown.Item>
                   ))}
-                  {console.log(data.me)}
                 </Dropdown.Menu>
+              </Dropdown> */}
 
+              <Form.Label >Select Dosing Trial</Form.Label>
+              <br></br>
+              <select id="selectId">
+                <option value="na">n/a</option>
+              {data.me.consumables.map((data) => (
+                  <option key={data._id} name={"consumableId"} value={data._id}>
+                    {data.name} 
+                  </option>
+                  ))}
+              </select> 
 
-              </Dropdown>
-
-            </Form.Label>
+            
           </Form.Group>
 
 
@@ -118,8 +156,8 @@ const MoodModal = (props) => {
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >Did you dose?</Form.Label>
             <div className="mx-auto">  
-              <Button name="dosed" value='true' onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
-              <Button name="dosed" value='false' onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
+              <Button name="dosed" value={true} onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
+              <Button name="dosed" value={false} onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
             </div>
           </Form.Group>
 
@@ -128,8 +166,8 @@ const MoodModal = (props) => {
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >Did you take any depressants today (ie alcohol/medications)?</Form.Label>
             <div className="mx-auto">  
-              <Button name="depressants" value='true' onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
-              <Button name="depressants" value='false' onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
+              <Button name="depressants" value={true} onClick={handleChange} className="me-2 btn-dark moodBtn positiveScoreHover">Yes</Button>
+              <Button name="depressants" value={false} onClick={handleChange} className="me-2 btn-dark moodBtn lowScoreHover">No</Button>
             </div>
           </Form.Group> 
 
@@ -138,33 +176,33 @@ const MoodModal = (props) => {
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >Rate the healthiness of your lifestyle today.</Form.Label>
           <div className="mx-auto">
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="1">Goblin Mode</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="2">Couch Potato</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value="3">Average</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="4">Trying</Button> 
-              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="5">Healthy Bitch</Button>
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={1}>Goblin Mode</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={2}>Couch Potato</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value={3}>Average</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={4}>Trying</Button> 
+              <Button name="lifestyle" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={5}>Healthy Bitch</Button>
           </div>
           </Form.Group>
           {/* Physical  */}
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >How does your physical body feel today?</Form.Label>
           <div className="mx-auto">
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="1">Barely Alive</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="2">Pain (tip to taint)</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value="3">Average</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="4">Pissing Excellence</Button> 
-              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="5">Strong AF</Button>
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={1}>Barely Alive</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={2}>Pain (tip to taint)</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value={3}>Average</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={4}>Pissing Excellence</Button> 
+              <Button name="physicalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={5}>Strong AF</Button>
           </div>
           </Form.Group>
           {/* Mental  */}
           <Form.Group className="mb-5 text-center fs-5" controlId="exampleForm.ControlInput1">
             <Form.Label >How do you feel today? Rate your mental health?</Form.Label>
           <div className="mx-auto">
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="1">Barely Alive</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value="2">Debbie Downer</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value="3">Average</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="4">Elated Eleanor</Button> 
-              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value="5">High AF</Button>
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={1}>Barely Alive</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn lowScoreHover" value={2}>Debbie Downer</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn avgScoreHover" value={3}>Average</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={4}>Elated Eleanor</Button> 
+              <Button name="mentalHealth" onClick={handleChange} className="mx-2 btn-dark moodBtn positiveScoreHover" value={5}>High AF</Button>
           </div>
           </Form.Group>
 

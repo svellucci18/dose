@@ -19,10 +19,12 @@ const resolvers = {
     consumables: async () => {
       return Consumable.find();
     },
-    // moods: async () => {
-    //   return Mood.find();
+    // NOTE that in order to access the mood data for the charts we need to add a query that populates the moods based on the consumables
+    // updateConsumable: async (parent, args, context) => {
+    //   if (context.consumable) {
+    //     return await Consumable.findByIdAndUpdate(context.consumable._id, args, {new: true});
+    //   }
     // },
-
   },
 
   Mutation: {
@@ -76,13 +78,14 @@ const resolvers = {
         return await Consumable.findByIdAndUpdate(context.consumable._id, args, {new: true});
       }
     },
-    addMood: async (parent, { consumableId, dosed }, context) => {
+    // LOOK AT THIS addMood!
+    addMood: async (parent, { consumableId, ...moods }, context) => {
       if (context.user) {
         return Consumable.findOneAndUpdate(
           { _id: consumableId },
           {
             $addToSet: {
-              moods: { dosed, depressants, lifestyle, physicalHealth, mentalHealth, comment },
+              moods,
             },
           },
           {
