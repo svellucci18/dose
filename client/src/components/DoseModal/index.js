@@ -32,6 +32,7 @@ const DoseModal = (props) => {
     setDosageState('');
     setNoteState('');
 
+    document.location.reload();
     console.log("consumable added");
   };
 

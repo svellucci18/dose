@@ -20,7 +20,7 @@ Microdosinng is a controversial practice that involves regular consumption of ve
 
 ## Deployment
 
-.jhjhvljh
+- [Deployed Application](https://dosed.herokuapp.com/)
 
 
 ## Technologies

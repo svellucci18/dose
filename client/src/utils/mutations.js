@@ -70,8 +70,8 @@ export const UPDATE_CONSUMABLE = gql`
 `;
 
 export const ADD_MOOD = gql`
-  mutation addMood($dosed: Boolean, $depressants: Boolean, $lifestyle: Int, $physicalHealth: Int, $mentalHealth: Int, $comment: String) {
-    addMood(dosed: $dosed, depressants: $depressants, lifestyle: $lifestyle, physicalHealth: $physicalHealth, mentalHealth: $mentalHealth, comment: $comment) {
+  mutation addMood($consumableId: ID!, $dosed: Boolean!, $depressants: Boolean!, $lifestyle: Int!, $physicalHealth: Int!, $mentalHealth: Int!, $comment: String) {
+    addMood(consumableId: $consumableId, dosed: $dosed, depressants: $depressants, lifestyle: $lifestyle, physicalHealth: $physicalHealth, mentalHealth: $mentalHealth, comment: $comment) {
       _id
       dosed
       depressants

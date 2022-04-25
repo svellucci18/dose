@@ -32,3 +32,17 @@ export const QUERY_CONSUMABLES = gql`
     }
   }
 `;
+
+export const QUERY_MOODS = gql`
+  query getMoods {
+    moods {
+      _id
+      dosed
+      depressants
+      lifestyle
+      physicalHealth
+      mentalHealth
+      comment
+    }
+  }
+`;
