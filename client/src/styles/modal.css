@@ -24,10 +24,6 @@
     border-radius: 22px;
 }
 
-/* .moodBtn:hover {
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-} */
 
 .trialDropdown {
     font-size: 1.2rem;
@@ -42,7 +38,14 @@
     color: var(--secondaryColor);
 }
 
+
+
 .lowScoreHover:hover {
+    background: linear-gradient(to left top, #f08d7c, #f7c274) ;
+    color: var(--secondaryColor);
+}
+
+.lowScoreHover:focus {
     background: linear-gradient(to left top, #f08d7c, #f7c274) ;
     color: var(--secondaryColor);
 }
@@ -52,7 +55,17 @@
     color: var(--secondaryColor);
 }
 
+.positiveScoreHover:focus {
+    background: linear-gradient(to left top, #f3e284, #e4f3a8 );
+    color: var(--secondaryColor);
+}
+
 .avgScoreHover:hover {
+    background: linear-gradient(to left top, #bbe2dd, #e5f5a5) ;
+    color: var(--secondaryColor);
+}
+
+.avgScoreHover:focus {
     background: linear-gradient(to left top, #bbe2dd, #e5f5a5) ;
     color: var(--secondaryColor);
 }

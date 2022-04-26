@@ -1,3 +1,10 @@
+.headerBackground{
+  background: linear-gradient(180deg, #e2f3a2 33.69%, rgba(196, 196, 196, 0) 81.36%);
+  height: 14vh;
+ 
+  margin-bottom: 10vh;
+}
+
 .rainbowMiniHeader {
     height: 10vh;
     background: url(../assets/images/rainbowHeader.png);
@@ -30,6 +37,31 @@
       transform: translateX(100vw);
     }
   }
+
+  .logBtn:hover {
+    background: linear-gradient(to left top, #f3e284, #e4f3a8) ;
+    color: var(--secondaryColor);
+  }
+
+  .doseButton:hover {
+    background: linear-gradient(to left top, #f3e284, #e4f3a8) ;
+    color: var(--secondaryColor);
+  }
+
+  .doseButton:focus {
+    background: linear-gradient(to left top, #f3e284, #e4f3a8) ;
+    color: var(--secondaryColor);
+  }
+
+  .moodButton:hover {
+    background: linear-gradient(to left top, #bbe2dd, #e5f5a5) ;
+    color: var(--secondaryColor);
+}
+
+.moodButton:focus {
+  background: linear-gradient(to left top, #bbe2dd, #e5f5a5) ;
+  color: var(--secondaryColor);
+}
 
   @media only screen and (max-width: 600px) {
     .rainbowMiniHeader {

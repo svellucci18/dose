@@ -23,6 +23,7 @@ border-radius: 10px;
   border:black 2px dotted;
   width: 70vw;
   font-size: 14px;
+  box-shadow: rgba(160, 212, 192, 0.4) -5px 5px, rgba(160, 212, 192, 0.3) -10px 10px, rgba(160, 212, 192, 0.2) -15px 15px, rgba(160, 212, 192, 0.1) -20px 20px, rgba(160, 212, 192, 0.05) -25px 25px;
 }
 
 .headerCard {
@@ -32,7 +33,7 @@ border-radius: 10px;
 
 
 .homeHeader {
-  background: radial-gradient(50% 50% at 50% 50%, #EF8693 48.96%, rgba(196, 196, 196, 0) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #BED4AC 48.96%, rgba(196, 196, 196, 0) 100%);
 
 }
 

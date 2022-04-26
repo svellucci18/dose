@@ -8,7 +8,7 @@ import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import angryT from "../assets/images/angryThomas2.png";
+import angryT from "../assets/images/mushroomillustration.png";
 
 // import css
 import "../styles/dashboard.css";
@@ -42,8 +42,8 @@ const Dashboard = () => {
     return (
       <>
         <Container>
-          <Row className="text-center mt-5">
-            <h1>You need to be logged in to see this!</h1>
+          <Row className="pt-2 text-center headerBackground">
+            <h2> OOPS -- You need to be logged in to see this!</h2>
           </Row>
 
           <Row>
@@ -59,9 +59,9 @@ const Dashboard = () => {
            
           </Card.Body>
 
-          <div className="d-flex justify-content-center"> 
+          <div className="d-flex justify-content-center mb-5 "> 
             <Link
-                className="btn btn-lg btn-outline-dark " to="/login">
+                className="btn btn-lg btn-outline-dark logBtn" to="/login">
                 login
               </Link>
               </div>
@@ -83,14 +83,14 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <Container>
+      <Container className="mb-5">
         <Row className="mt-5 ">
           <Col
             xs={6}
             className="d-flex align-items-center justify-content-center"
           >
             <Button
-              className="p-3 fs-2"
+              className="p-3 fs-2 doseButton"
               variant="dark"
               size="lg"
               onClick={() => {
@@ -107,7 +107,7 @@ const Dashboard = () => {
             className="d-flex align-items-center justify-content-center"
           >
             <Button
-              className="p-3 fs-2"
+              className="p-3 fs-2 moodButton"
               variant="dark"
               size="lg"
               onClick={() => {
@@ -128,7 +128,7 @@ const Dashboard = () => {
         </Row>
       </Container>
 
-      <div>
+      <div className="my-5">
         <DataChart />
       </div>
     </>

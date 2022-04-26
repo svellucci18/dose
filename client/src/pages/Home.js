@@ -1,7 +1,4 @@
 import { Carousel, Card, Container, Row, Col, Image } from "react-bootstrap/";
-import carousel1 from "../assets/images/dopeDose.png";
-import enlightend from "../assets/images/lakeguy.png";
-import meditate from "../assets/images/happyhiker1.jpg";
 import mushroomvariety from '../assets/images/mushroomvariety.jpg';
 import focusflora from '../assets/images/focusflora.jpg';
 import mushroomcal from '../assets/images/mushroomcal.jpg';
