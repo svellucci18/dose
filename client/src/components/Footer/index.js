@@ -23,7 +23,7 @@ const Footer = () => {
         <Row className="py-1">
 
         <Col className="doseFooter d-flex align-items-center justify-content-start">
-              dose.
+            <a className="text-decoration-none whiteText doseFooterText" href="#" >  dose. </a>
         </Col>
 
         <Col className="d-flex align-items-center justify-content-end">
